@@ -48,12 +48,13 @@
 // 20120307 - 2012-03-07aRagexeRE+ - 0x970
 
 #ifndef PACKETVER
-	#define PACKETVER 20131223
+	//#define PACKETVER 20131223
+	#define PACKETVER 20120410
 #endif // PACKETVER
 
 #ifndef DISABLE_PACKETVER_RE
 	//Uncomment the following line if your client is ragexeRE instead of ragexe (required because of conflicting packets in ragexe vs ragexeRE).
-	//#define PACKETVER_RE
+	#define PACKETVER_RE
 #endif // DISABLE_PACKETVER_RE
 
 // Client support for experimental RagexeRE UI present in 2012-04-10 and 2012-04-18
@@ -89,7 +90,7 @@
 #define MAX_SLOTS 4
 //Max amount of a single stacked item
 #define MAX_AMOUNT 30000
-#define MAX_ZENY 1000000000
+#define MAX_ZENY 2000000000
 
 //Official Limit: 2.1b ( the var that stores the money doesn't go much higher than this by default )
 #define MAX_BANK_ZENY 2100000000
