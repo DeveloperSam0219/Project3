@@ -11,7 +11,7 @@ invek,148,173,4	script	Buffer	466,{
 			percentheal 100,100;
 			specialeffect2 462;
 			specialeffect2 338; 
-			sc_start SC_INCREASEAGI,900000,10;
+			sc_start SC_INC_AGI,900000,10;
 			sc_start SC_BLESSING,900000,10;
 			sc_start SC_MAGNIFICAT,900000,10;
 //if (agitcheck() == 0) {

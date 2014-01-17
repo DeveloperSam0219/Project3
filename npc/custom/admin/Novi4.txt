@@ -14,7 +14,7 @@ mes "Möchtest du nun in die Hauptstadt gehen?";
 switch(select("Ja","Nein")) {
 case 1:
 getitem 12208,2;
-Save("invek", 146, 166);
+save("invek", 146, 166);
 warp "invek", 146, 166;
 close;
 case 2:

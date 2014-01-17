@@ -16,7 +16,7 @@ close; }
 next;
 	switch(select("Ja, ich bin bereit.","Nein, nocht nicht.")) {
 case 1:
-		Save("new_zone03", 96, 31);
+		save("new_zone03", 96, 31);
 	warp "new_zone03",96,31;
 close;
 case 2:

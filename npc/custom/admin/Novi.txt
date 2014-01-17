@@ -11,7 +11,7 @@ next;
 	mes "[ ^000088Novice Assistent^000000 ]";
 	mes "Viel Glück auf deinem Weg...";
 close2;
-Save("new_zone02", 100, 72);
+save("new_zone02", 100, 72);
 wnew_zone02: warp "new_zone02", 100, 72;
 close;
 	case 2:
