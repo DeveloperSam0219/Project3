@@ -1775,3 +1775,22 @@
 5819,507,100	// Carnival Circlet
 5821,507,100	// Gold Tulip Hairpin
 5822,499,100	// Love Chick Hat
+
+//AoRO Items
+5474,511,100	// AFK Hat
+12208,511,100	// Battle Manual (50%)
+7803,511,100	// Beginner's Field Manual (EXP x3)
+12263,511,100	// Field Manual 50%
+14533,511,100	// Field Manual 100%
+14532,511,100	// Field Manual 25%
+22040,479,100 // Buff Energie
+12622,479,100	// Reins of Mount
+
+//Pässe
+22007,511,100	//Goldraum Pass
+22008,479,100	//PvP Tunier Pass
+22011,479,100	//PvP Pass
+30066,511,100	//Goldraum Pass
+30068,479,100	//PvP Tunier Pass
+30067,479,100	//PvP Pass#
+30069,479,100	//PvP Pass#
