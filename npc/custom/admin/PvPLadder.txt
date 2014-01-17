@@ -318,16 +318,16 @@ if ($@LadderAskLogin == 1){
 L_reset:
 	if (getgmlevel() < 99) end;
 	mes "Do you want to reset the ladder?";
-	if (select ("Yes","No") == 2) goto L_end;
+	if (select ("Yes","No") == 2) goto L_End;
 	mes "Are you really really sure you want to reset it?";
-	menu "Yes, ffs!!",-,"No",L_end;
+	menu "Yes, ffs!!",-,"No",L_End;
 	deletearray $terces_PVP_kills,128;
 	deletearray $terces_PVP_deaths,128;
 	deletearray $terces_PVP_names$,128;
 	deletearray $terces_PVP_times,128;
 	set $terces_PVP_resets,$terces_PVP_resets +1;
 
-	L_end:
+	L_End:
 	mes "Okay...cya";
 	close;
 	

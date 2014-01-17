@@ -1,0 +1,8 @@
+new_zone02,100,17,0	script	Willkommen	139,1,1,{
+OnTouch:
+	if (Class==Job_Novice && BaseExp==0 && BaseLevel==1) {
+		announce "Unser neuester Spieler heiﬂt "+ strcharinfo(0) +". Willkommen bei FlawlessRO !",bc_all;
+		set BaseExp,1; // (Eine neue Variable muss nicht errichtet werden)
+	}
+	end;
+}

@@ -1,0 +1,29 @@
+new_zone02,17,182,4	script	Novice Healing Assistent	102,{
+
+if ( gesprochen == 0 ) {
+	mes "[ ^ff0000 Novice Healing Item Assistent^000000 ]";
+	mes "Sprich zuerst mit dem ^ff0000Novice Equip Assistent^000000.";
+close; }
+
+if ( gesprochen == 2 ) {
+	mes "[ ^ff0000 Novice Healing Item Assistent^000000 ]";
+	mes "Gehe nun zum ^ff0000Novice Battle Assistent^000000.";
+close; }
+
+	mes "[ ^ff0000 Novice Healing Item Assistent^000000 ]";
+	mes "Willkommen! Ich werde dir zeigen, wie man Tränke richtig einsetzt.";
+next;
+	mes "[ ^ff0000 Novice Healing Item Assistent^000000 ]";
+	mes "Mit heilenden Tränken kannst du deine ^008000HP^000000 oder deine ^000088SP^000000 auffüllen.";
+	mes "Somit kannst du Kämpfe leichter gewinnen.";
+next;
+	mes "[ ^ff0000 Novice Healing Item Assistent^000000 ]";
+	mes "Zum Schluss erhälst du 20 ^008000Novice Potions^000000.";
+    getitem 569,20;
+	mes "Benutze sie weise!";
+next;
+		set gesprochen, 2;
+	mes "[ ^ff0000 Novice Healing Item Assistent^000000 ]";
+	mes "Gehe nun zum ^ff0000Novice Battle Assistent^000000";
+close; 
+}

@@ -1,0 +1,56 @@
+new_zone02,23,188,6	script	Battle Assistent	55,{
+
+if ( gesprochen == 0 ) {
+	mes "[ ^ff0000Novice Battle Assistent^000000 ]";
+	mes "Sprich zuerst mit dem ^ff0000Novice Equip Assistent^000000.";
+close; }
+
+if ( gesprochen == 1 ) {
+	mes "[ ^ff0000Novice Battle Assistent^000000 ]";
+	mes "Sprich zuerst mit dem ^ff0000Novice Healing Assistent^000000.";
+close; }
+
+//Novice Battle Training
+	mes "[ ^ff0000Novice Battle Assistent^000000 ]";
+	mes "Möchtest du nun in das Novicen Trainingsgelände?";
+next;
+	switch(select("Ja, ich bin bereit.","Nein, nocht nicht.")) {
+case 1:
+		Save("new_zone03", 96, 31);
+	warp "new_zone03",96,31;
+close;
+case 2:
+	mes "[ ^ff0000Novice Battle Assistent^000000 ]";
+	mes "Komm wieder wenn du bereit bist.";
+close; }
+}
+
+new_zone03,94,33,6	script	Battle Assistent#1	55,{
+//Novice Battle Training
+	mes "[ ^ff0000Novice Battle Assistent^000000 ]";
+	mes "Möchtest du ein paar Tipps?";
+next;
+	switch(select("Ja","Nein danke")) {
+case 1:
+	mes "[ ^ff0000Novice Battle Assistent^000000 ]";
+	mes "Von hier aus gerade wirst du eine Brücke finden.";
+	mes "Überquere die Brücke geradewegs.";
+	mes "Danach folge dem ^ff0000Wegweiser^000000 .";
+next;
+	mes "[ ^ff0000Novice Battle Assistent^000000 ]";
+	mes "Bitte beachte, dass dein ^ff0000Job Level^000000 mindestens auf Level 10 sein muss um das Training abzuschließen.";
+next;
+	mes "[ ^ff0000Novice Battle Assistent^000000 ]";
+	mes "Übrigens:";
+	mes "Mit dem commando ^008000/nc^000000 greifst du automatisch an.";
+	mes "Gib das in der Chatleiste ein.";
+	mes "Es könnte dir sehr von Nutzem sein.";
+next;
+	mes "[ ^ff0000Novice Battle Assistent^000000 ]";
+	mes "Viel Glück!";
+close;
+case 2:
+	mes "[ ^ff0000Novice Battle Assistent^000000 ]";
+	mes "Komm wieder, wenn du Tipps benötigst.";
+close; }
+}

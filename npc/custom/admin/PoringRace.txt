@@ -148,7 +148,7 @@ L_AlreadyPlaying:
 	mes "You've already chosen ^00bb00"+@prace_winner$+"^000000.";
 	close;
 
-L_NoZeny:
+l_nozeny:
 	mes .@name$;
 	mes "You do not have enough zeny.";
 	close;

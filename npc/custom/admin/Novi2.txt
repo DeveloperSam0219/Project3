@@ -1,0 +1,54 @@
+new_zone02,100,103,6	script	Wegweiser	835,{
+end;
+
+OnInit:
+waitingroom "<- Links !",0;
+end;
+}
+
+new_zone03,106,46,6	script	Wegweiser#1	835,{
+end;
+
+OnInit:
+waitingroom "Geradeaus",0;
+end;
+}
+
+new_zone03,100,133,6	script	Wegweiser#2	835,{
+end;
+
+OnInit:
+waitingroom "Geradeaus",0;
+end;
+}
+
+//
+invek,180,211,6	script	Wegweiser#3	835,{
+OnInit:
+waitingroom "Bank",0;
+end;
+}
+
+invek,143,207,6	script	Wegweiser#4	835,{
+OnInit:
+waitingroom "GM Haus",0;
+end;
+}
+
+invek,103,189,6	script	Wegweiser#5	835,{
+OnInit:
+waitingroom "Mall",0;
+end;
+}
+
+invek,107,198,6	script	Wegweiser#6	835,{
+OnInit:
+waitingroom "Remover",0;
+end;
+}
+
+invek,106,207,6	script	Wegweiser#7	835,{
+OnInit:
+waitingroom "Refiner",0;
+end;
+}

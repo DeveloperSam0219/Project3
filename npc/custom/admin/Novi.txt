@@ -1,0 +1,30 @@
+new_zone02,100,30,6	script	Novice Assistent	730,{
+//Novice Training
+	mes "[ ^000088Novice Assistent^000000 ]";
+	mes "Willkommen bei Flawless Ragnarok Online !";
+next;
+	mes "[ ^000088Novice Assistent^000000 ]";
+	mes "Bist du bereit um in ein Abenteuer einzutauchen?";
+next;
+	switch(select("Ja","Nein..")) {
+	case 1:
+	mes "[ ^000088Novice Assistent^000000 ]";
+	mes "Viel Glück auf deinem Weg...";
+close2;
+Save("new_zone02", 100, 72);
+wnew_zone02: warp "new_zone02", 100, 72;
+close;
+	case 2:
+next;
+	mes "[ ^000088Novice Assistent^000000 ]";
+	mes "Komm wieder, wenn du bereit bist.";
+close;
+}
+}
+
+
+new_zone02,99,74,6	script	Novice Assistent#1	730,{
+	mes "[ ^000088Novice Assistent^000000 ]";
+	mes "Geh weiter, dort findest du einen ^ff0000Wegweiser^000000 .";
+close;
+}

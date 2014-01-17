@@ -1,0 +1,27 @@
+new_zone04,100,29,6	script	Novice Master	743,{
+
+cutin "job_sage_kayron",2;	
+if (Class == Job_Novice && JobLevel < 10) {
+mes "[ ^ff0000Novice Master^000000 ]";
+mes "Du benötigst ^ff0000Job Level^000000 10 um das Training abzuschließen.";
+close;
+}
+mes "[ ^ff0000Novice Master^000000 ]";
+mes "Wie ich sehe hast du dein Training absolviert.";
+next;
+mes "[ ^ff0000Novice Master^000000 ]";
+mes "Möchtest du nun in die Hauptstadt gehen?";
+switch(select("Ja","Nein")) {
+case 1:
+getitem 12208,2;
+Save("invek", 146, 166);
+warp "invek", 146, 166;
+close;
+case 2:
+next;
+mes "[ ^ff0000Novice Master^000000 ]";
+mes "Komm wieder wenn du bereit bist das Training zu beenden.";
+	cutin "", 255;
+close;
+}
+}

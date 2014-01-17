@@ -310,104 +310,8 @@ OnGMStop:
 			disablenpc "Disguise NPC";
 			disablenpc "guesswarp";
 		}
-/*//------------------------------------------------------------//
-//----------------Edited by Lenya---------------------------------//
-//------------------Ascension of Ragnarok---------------------------//
-//--------------------Disguise Event NPC -----------------------------//
-//-------------------------------------------------------------------//*/
-
-gm_haus,175,77,4	script	Disguise CP	794,{
-
-if (getgmlevel()<99)
-{
-	mes "^3399FF[Disguise CP]^000000";
-	mes "Sorry, du hast keine Berechtigung.";
-	close;
+		end;
 }
-
-mes "^3399FF[Disguise CP]^000000";
-mes "Hallo Boss,";
-mes "Was möchtest du heute machen?";
-switch(select("Event starten:Event stoppen:Anzahl der Runden kalkulieren[^E50000"+$guessrounds+"^000000]:Preis kalkulieren^E50000 ["+getitemname($guessprize)+"]^000000 ^E50000 ["+ $guessprizecount + "]^000000:Nichts"))
-{
-	case 1:
-	{
-		next;
-		mes "^3399FF[Disguise CP]^000000";
-		mes "Bestätigen sie durch die Eingabe von START.";
-		input .@confirm$;
-		if (.@confirm$ == "START")
-		{
-			donpcevent "guessAnnouncer::OnGMStart";
-			close;
-		}
-		mes "Bestätigung fehlgeschlagen";
-		close;
-		break;
-	}
-	case 2:
-	{
-		next;
-		mes "^3399FF[Disguise CP]^000000";
-		mes "Bestätigen sie durch die Eingabe von STOP.";
-		input .@confirm$;
-		if (.@confirm$ == "STOP")
-		{
-			donpcevent "guessAnnouncer::OnGMStop";
-			close;
-		}
-		mes "Bestätigung fehlgeschlagen";
-		close;
-		break;
-
-	}
-
-	case 3:
-	{
-		next; mes "^3399FF[Disguise CP]^000000";
-		mes "Bitte gib eine neue Nummer ein.";
-		input $guessrounds;
-		if ($guessrounds > 30) set $guessrounds, 30;
-		else if ($guessrounds < 1) set $guessrounds, 1;
-		close;
-	}
-
-	case 4:
-	{
-		next; mes "^3399FF[Disguise CP]^000000";
-		mes "Bitte gib eine Preis ID ein.";
-		input .@guessprizeid;
-		if (getitemname(.@guessprizeid) == "null" || getitemname(.@guessprizeid) == "") {next; mes "^3399FF[Disguise CP]^000000"; mes "Error"; mes "This item does not exist in the database..."; close;}
-		set $guessprize, .@guessprizeid;
-		next; mes "^3399FF[Disguise CP]^000000";
-		mes "Bitte gib die Anzahl der Preise an.";
-		input .@guessprizeamount;
-		if (!.@guessprizeamount) set .@guessprizeamount,1 ;
-		set $guessprizecount,.@guessprizeamount;
-		next; mes "^3399FF[Disguise CP]^000000";
-		mes "Der Preis wurde zu ^E50000 "+ getitemname($guessprize)+ "^000000 und die Menge ^E50000 " +$guessprizecount+"^000000";
-		close;
-	}
-
-
-	case 5:
-	{
-		next; mes "^3399FF[Disguise CP]^000000";
-		mes "Schönen Tag noch.";
-		close;
-	}
-     
-}
-
-
-}
-
-
-
-
-
-
-
 
 poring_cat,102,99,4	script	Disguise NPC		794,{
 
@@ -573,13 +477,7 @@ OnStart:
 		sleep 5000;
 		goto OnStart;
 		end;
-
-
-
 }
-
-//-----------------------------------------------------------------------------------
-//-----------------------------------------------------------------------------------
 
 -	script	guessAnnouncer	-1,{
 
@@ -682,7 +580,6 @@ OnInit:
 	set $guessactive, 0;
 	setarray $Forbidden[0],1003,1006,1017,1021,1022,1027,1043,1136,1137,1168,1171,1172,1173,1181,1210,1217,1218,1223,1284,1325,1326,1327,1328,1329,1330,1331,1332,1333,1334,1335,1336,1337,1338,1339,1340,1341,1342,1343,1344,1345,1346,1347,1348,1349,1350,1351,1352,1353,1354,1355,1356,1357,1358,1359,1360,1361,1362,1363,1407,1411,1414,1496,1501,1900,1948,1892,1949,1950,1983,1984,2010,1003,1006,1017,1021,1022,1027,1043,1075,1136,1137,1168,1171,1172,1173,1181,1210,1222,1223,1224,1225,1226,1227,1228,1233,1284,1407,1411,1414,1496,1501,1900,1996,2002,2003,2004,2005,2006,2007,2011,2012,2025,2028,2029,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,2040,2041,2042,2043,2044,2045,2046,2047,2048,2049,2050,2051,2052,2053,2054,2055,2056,2057,2058,2059,2060,2061,2062,2063,2064,2065,2066,2067,2075,2076,2077,2078,2079,2080,2081,2084,2093,2094,2095,2096,2097,2098,2099,2100,2101,2102,2103,2104,2105,2106,2107,2108,2109,2110,2111,2112,2113,2114,2115,2116,2117,2118,2119,2120,2121,2122,2123,2124,2125,1900,1901,1902,1903,1237,1239,1145,1175,1209,1841,1842,1843,1844,3014,3001,3002,2114,2115,2117,2118,2119,2120,6049,6050,6051,6052,2200,2205,2207;
 
-}
 }
 
 //-----------------------------------------------------------------------------------

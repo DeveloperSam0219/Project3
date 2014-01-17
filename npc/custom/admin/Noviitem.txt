@@ -1,0 +1,35 @@
+new_zone02,38,183,4	script	Novice Equip Assistent	101,{
+	
+if ( gesprochen == 1 ) {
+mes "[ ^ff0000 Novice Equip Assistent^000000 ]";
+mes "Gehe nun zum ^ff0000Novice Healing Item Assistent^000000.";
+close;
+}
+
+if ( gesprochen == 2 ) {
+	mes "[ ^ff0000 Novice Healing Item Assistent^000000 ]";
+	mes "Gehe nun zum ^ff0000Novice Healing Assistent^000000.";
+close; }
+
+	mes "[ ^ff0000 Novice Equip Assistent^000000 ]";
+	mes "Willkommmen! Ich werde dir erklären, wie du dein Equipment benutzst..";
+next;
+	mes "[ ^ff0000 Novice Equip Assistent^000000 ]";
+	mes "Mit der Tastenkombination ^008000Alt^000000 + ^ff0000Q^000000 kannst du dein Equipment Fenster öffnen.";
+next;
+	mes "[ ^ff0000 Novice Equip Assistent^000000 ]";
+	mes "Mit der Tastenkombination ^008000Alt^000000 + ^ff0000E^000000 öffnest du dein Inventar.";
+next;
+	mes "[ ^ff0000 Novice Equip Assistent^000000 ]";
+	mes "Zum Schluss erhälst du ein Novicen Trainings Set.";
+    getitem 5055,1;
+    getitem 2393,1;
+    getitem 2414,1;
+    getitem 2510,1;
+    getitem 2112,1;
+next;
+set gesprochen, 1;
+	mes "[ ^ff0000 Novice Equip Assistent^000000 ]";
+	mes "Gehe nun zum ^ff0000Novice Healing Item Assistent^000000.";
+close; 
+}

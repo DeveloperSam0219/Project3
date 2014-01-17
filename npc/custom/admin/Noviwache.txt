@@ -1,0 +1,12 @@
+new_zone04,96,17,6	script	Wache	966,{
+	mes "[ ^008000Wache^000000 ]";
+	mes "Wir sind für die Sicherheit im Trainingsgelände zuständig.";
+close; }
+
+new_zone04,103,17,4	duplicate(Wache)	Wache#1	966
+new_zone04,96,12,6	duplicate(Wache)	Wache#2	966
+new_zone04,103,12,4	duplicate(Wache)	Wache#3	966
+new_zone04,96,22,6	duplicate(Wache)	Wache#4	966
+new_zone04,103,22,4	duplicate(Wache)	Wache#5	966
+new_zone03,93,175,6	duplicate(Wache)	Wache#6	966
+new_zone03,98,175,4	duplicate(Wache)	Wache#7	966

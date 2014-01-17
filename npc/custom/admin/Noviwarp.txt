@@ -1,0 +1,27 @@
+//Zu Raum 3
+new_zone02,74,106,0	warp	noviwarp01	1,1,new_zone02,43,173,0
+new_zone02,46,173,0	warp	noviwarp02	1,1,new_zone02,76,106,0
+
+//Zu Endraum
+new_zone03,96,176,0	warp	noviwarp03	1,1,new_zone04,100,13,0
+new_zone04,100,9,0	warp	noviwarp04	1,1,new_zone03,96,173,0
+prtv_in01,78,175,0	warp	mall05	1,1,invek,110,195,0
+invek,106,195,0	warp	mall06	1,1,prtv_in01,81,175,0
+invek,105,214,0	warp	mall07	1,1,prtv_in02,137,39,0
+prtv_in01,21,53,0	warp	mall08	1,1,invek,104,186,0
+invek,101,186,0	warp	mall09	1,1,prtv_in01,21,57,0
+prtv_in02,133,39,0	warp	mall10	1,1,invek,105,211,0
+
+prtv_in01,21,81,0	warp	mall11	1,1,prtv_in01,114,14,0
+prtv_in01,114,11,0	warp	mall12	1,1,prtv_in01,21,78,0
+
+prtv_in01,35,67,0	warp	mall13	1,1,prtv_in01,114,63,0
+prtv_in01,112,63,0	warp	mall14	1,1,prtv_in01,33,67,0
+
+prtv_in01,141,21,0	warp	mall15	1,1,prtv_in01,61,91,0
+prtv_in01,58,91,0	warp	mall16	1,1,prtv_in01,138,21,0
+
+prtv_in01,121,78,0	warp	mall15	1,1,prtv_in01,179,162,0
+prtv_in01,179,159,0	warp	mall16	1,1,prtv_in01,121,75,0
+
+
