@@ -21,7 +21,7 @@ prtv_in01,112,63,0	warp	mall14	1,1,prtv_in01,33,67,0
 prtv_in01,141,21,0	warp	mall15	1,1,prtv_in01,61,91,0
 prtv_in01,58,91,0	warp	mall16	1,1,prtv_in01,138,21,0
 
-prtv_in01,121,78,0	warp	mall15	1,1,prtv_in01,179,162,0
-prtv_in01,179,159,0	warp	mall16	1,1,prtv_in01,121,75,0
+prtv_in01,121,78,0	warp	mall18	1,1,prtv_in01,179,162,0
+prtv_in01,179,159,0	warp	mall19	1,1,prtv_in01,121,75,0
 
 

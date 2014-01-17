@@ -104,32 +104,32 @@ p_track01,58,41,2	script	Race Manager#prace0	765,{
 	close;
 
 L_P1:
-	if (Zeny < .@prace_zeny) goto L_NoZeny;
+	if (Zeny < .@prace_zeny) goto l_nozeny;
 	set Zeny,Zeny-.@prace_zeny;
 	set @prace_winner$,"Poring";
 	goto L_Ready;
 L_P2:
-	if (Zeny < .@prace_zeny) goto L_NoZeny;
+	if (Zeny < .@prace_zeny) goto l_nozeny;
 	set Zeny,Zeny-.@prace_zeny;
 	set @prace_winner$,"Angeling";
 	goto L_Ready;
 L_P3:
-	if (Zeny < .@prace_zeny) goto L_NoZeny;
+	if (Zeny < .@prace_zeny) goto l_nozeny;
 	set Zeny,Zeny-.@prace_zeny;
 	set @prace_winner$,"Metaling";
 	goto L_Ready;
 L_P4:
-	if (Zeny < .@prace_zeny) goto L_NoZeny;
+	if (Zeny < .@prace_zeny) goto l_nozeny;
 	set Zeny,Zeny-.@prace_zeny;
 	set @prace_winner$,"Deviling";
 	goto L_Ready;
 L_P5:
-	if (Zeny < .@prace_zeny) goto L_NoZeny;
+	if (Zeny < .@prace_zeny) goto l_nozeny;
 	set Zeny,Zeny-.@prace_zeny;
 	set @prace_winner$,"Santa Poring";
 	goto L_Ready;
 L_P6:
-	if (Zeny < .@prace_zeny) goto L_NoZeny;
+	if (Zeny < .@prace_zeny) goto l_nozeny;
 	set Zeny,Zeny-.@prace_zeny;
 	set @prace_winner$,"Poporing";
 	goto L_Ready;
