@@ -1,0 +1,30 @@
+//========================================
+//A Lenya Script - Auto Cleaner ==========
+//========================================
+-	script	DBArenaCleaner	-1,{
+OnPCLoadMapEvent:
+	if( !compare( .map_checker$, strcharinfo(3) ) ) end; // check if a player is on a map in the setting
+	.@m$ = strcharinfo(3);
+	if( getd( "."+ .@m$ ) ) end; // check if already a loop for the map
+	setd "."+ .@m$, 1;
+	while( .timer_clean ) {
+		sleep 5000;
+		if( getmapusers( .@m$ ) )
+			.@count = 0;
+		else {
+			.@count++;
+			if( .@count == .timer_clean * 12 ) goto L_clean;
+		}
+	}
+L_clean:
+	setd "."+ .@m$, 0;
+	killmonsterall .@m$;
+	end;
+OnInit:
+	setarray .map_mvp$, "dbarena1","dbarena2","dbarena3","dbarena4","dbarena5";
+	.map_checker$ = implode( .map_mvp$, "|" );
+	for( ; .@i < getarraysize( .map_mvp$ ); .@i++ )
+		setmapflag .map_mvp$[.@i], mf_loadevent;
+	.timer_clean = 5; // Hier stellt man den Timer ein.
+	end;
+}

@@ -1,0 +1,209 @@
+invek,139,104,6	script	Verzauberte Valkyrie	403,{
+
+	set @n$, "[ ^8B0000Verzauberte Valkyrie^000000 ]";	// NPC Name
+
+	cutin "wish_maiden11",2;
+	mes @n$;
+	mes ".... Was ich hier mache?";
+	mes "Ich wurde verzaubert und habe nun verborgene Kräfte.";
+	next;
+	mes @n$;
+	mes "Einer meine Fähigkeiten ist es Flügel herzustellen.";
+	mes "Hast du Interesse daran?";
+	menu "Zeig sie mir!", MES1,"Nein, danke.", CL;
+	
+MES1:
+	next;
+	mes @n$;
+	mes "Wähle aus was du möchtest: ";
+	menu "Animated Angel Wings", Q1, "Black Animated Angel Wings", Q2, "Blue Animated Angel Wings", Q3, "Cyan Animated Angel Wings", Q4, "Gold Animated Angel Wings", Q5, "Green Animated Angel Wings", Q6, "Purple Animated Angel Wings", Q7, "Red Animated Angel Wings", Q8, "Nichts", CL;
+
+										// QUEST //
+Q1:
+if (countitem(2254)<1 || countitem(7168) < 150 || countitem(7064) < 100 || countitem(7006) < 100 ) goto NOITEMS;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET1, "Nein", CL;
+
+Q2:
+if (countitem(2254)<1 || countitem(7168) < 150 || countitem(7064) < 100 || countitem(7006) < 100 ) goto NOITEMS;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET2, "Nein", CL;
+
+Q3:
+if (countitem(2254)<1 || countitem(7168) < 150 || countitem(7064) < 100 || countitem(7006) < 100 ) goto NOITEMS;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET3, "Nein", CL;
+
+Q4:
+if (countitem(2254)<1 || countitem(7168) < 150 || countitem(7064) < 100 || countitem(7006) < 100 ) goto NOITEMS;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET4, "Nein", CL;
+Q5:
+if (countitem(2254)<1 || countitem(7168) < 150 || countitem(7064) < 100 || countitem(7006) < 100 ) goto NOITEMS;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET5, "Nein", CL;
+
+Q6:
+if (countitem(2254)<1 || countitem(7168) < 150 || countitem(7064) < 100 || countitem(7006) < 100 ) goto NOITEMS;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET6, "Nein", CL;
+
+Q7:
+if (countitem(2254)<1 || countitem(7168) < 150 || countitem(7064) < 100 || countitem(7006) < 100 ) goto NOITEMS;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET7, "Nein", CL;
+	
+Q8:
+if (countitem(2254)<1 || countitem(7168) < 150 || countitem(7064) < 100 || countitem(7006) < 100 ) goto NOITEMS;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET8, "Nein", CL;
+	
+GET1:									// ITEMAUSGABE //
+		next;
+	getitem 22512, 1;
+	delitem 2254, 1;
+	delitem 7168, 150;
+	delitem 7064, 100;
+	delitem 7006, 100;
+	mes @n$;
+	mes "Hier hast du deine Wings.";
+	cutin "", 255;
+		close;
+GET2:
+		next;
+	getitem 22513, 1;
+	delitem 2254, 1;
+	delitem 7168, 150;
+	delitem 7064, 100;
+	delitem 7006, 100;
+	mes @n$;
+	mes "Hier hast du deine Wings.";
+	cutin "", 255;
+		close;
+GET3:
+		next;
+	getitem 22514, 1;
+	delitem 2254, 1;
+	delitem 7168, 150;
+	delitem 7064, 100;
+	delitem 7006, 100;
+	mes @n$;
+	mes "Hier hast du deine Wings.";
+	cutin "", 255;
+		close;
+GET4:
+		next;									// ITEMAUSGABE //
+	getitem 22515, 1;
+	delitem 2254, 1;
+	delitem 7168, 150;
+	delitem 7064, 100;
+	delitem 7006, 100;
+	mes @n$;
+	mes "Hier hast du deine Wings.";
+	cutin "", 255;
+		close;
+GET5:
+		next;
+	getitem 22516, 1;
+	delitem 2254, 1;
+	delitem 7168, 150;
+	delitem 7064, 100;
+	delitem 7006, 100;
+	mes @n$;
+	mes "Hier hast du deine Wings.";
+	cutin "", 255;
+		close;
+GET6:
+		next;
+	getitem 22517, 1;
+	delitem 2254, 1;
+	delitem 7168, 150;
+	delitem 7064, 100;
+	delitem 7006, 100;
+	mes @n$;
+	mes "Hier hast du deine Wings.";
+	cutin "", 255;
+		close;
+GET7:
+		next;
+	getitem 22518, 1;
+	delitem 2254, 1;
+	delitem 7168, 150;
+	delitem 7064, 100;
+	delitem 7006, 100;
+	mes @n$;
+	mes "Hier hast du deine Wings.";
+	cutin "", 255;
+		close;
+GET8:
+		next;
+	getitem 22519, 1;
+	delitem 2254, 1;
+	delitem 7168, 150;
+	delitem 7064, 100;
+	delitem 7006, 100;
+	mes @n$;
+	mes "Hier hast du deine Wings.";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOITEMS:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Angel Wing";
+	mes "150x Giant Butterfly Wing";
+	mes "100x Wing of Dragonfly";
+	mes "100x Wing of Red Bat";
+	cutin "", 255;
+		close;
+
+
+										// CLOSE //
+CL:
+		next;
+	mes @n$;
+	mes "Mögen die Valkyrien dich Segnen...";
+		cutin "", 255;
+		close;
+}

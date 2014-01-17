@@ -1,0 +1,15 @@
+-	script	DayNight	-1,{
+OnInit:
+  if ((gettime(3) < 8) || (gettime(3) >= 18)) night;
+  end;
+
+OnClock0800:
+  announce "Die Sonne geht auf und Rune Midgrard erstrahlt im Sonnenlicht.",bc_all;
+  day;
+  end;
+
+OnClock1800:
+  announce "Die Sonne geht unter und der Schatten fällt über Rune Midgrard.",bc_all;
+  night;
+  end;
+}

@@ -1,0 +1,10 @@
+-	script	Info	-1,{
+OnTimer2000000
+:
+	stopnpctimer;
+	announce "Bitte schaue jeden Tag ins Forum! - www.flawlessro.asurahosting.com/forum", 0;
+OnInit:
+	//setnpctimer 0; //Shouldn't be necessary as initnpctimer already set npc timer to 0.
+	initnpctimer;
+	end;
+}

@@ -1,0 +1,374 @@
+invek,214,225,2	script	Maskierter Künstler	916,{
+
+	set @n$, "[ ^ff0000Maskierter Künstler^000000 ]";	// NPC Name
+
+	cutin "ra_usti1",2;
+	mes @n$;
+	mes "Hallöchen!";
+	mes "Ich bin ein Künstler und mache deine Helme zu atemberaubenden Kunststücken!";
+		next;
+	mes @n$;
+	mes "Wähle eines meiner Künste aus!";
+	menu "Black Valkyrie Helm", Q1, "Black Hybrid Valkyrie Helm", Q2, "Blue Hybrid Valkyrie Helm", Q3, "Blue Hybrid Valkyrja Helm", Q4, "Red Hybrid Valkyrja Helm", Q5, "Red Valkyrie Helm", Q6, "Colored Valkyrie Helm", Q7, "Peacocksilver Valkyrie Helm", Q8, "Psycho Valkyrie Helm", Q9, "Purple Psycho Valkyrie Helm", Q10, "Randgris Helm", Q11, "Silver Valkyrie Helm", Q12, "Snow Valkyrie Helm", Q13, "Grey Valkyrie Helm", Q14, "Light Blue Valkyrie Helm", Q15, "Helm of Valkyrie", Q16;
+
+
+
+
+//Valkyriehelm Quest								// QUEST //
+Q1:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET1, "Nein", CL;
+
+
+
+Q2:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET2, "Nein", CL;
+
+
+Q3:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET3, "Nein", CL;
+
+Q4:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET4, "Nein", CL;
+
+Q5:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET5, "Nein", CL;
+
+Q6:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET6, "Nein", CL;
+
+Q7:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET7, "Nein", CL;
+
+Q8:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET8, "Nein", CL;
+
+Q9:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET9, "Nein", CL;
+
+Q10:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET10, "Nein", CL;
+
+Q11:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET11, "Nein", CL;
+
+Q12:
+if (countitem(22390)<1 || countitem(976) < 1 ) goto NOIT10;
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET12, "Nein", CL;
+
+Q13:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET13, "Nein", CL;
+
+Q14:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET14, "Nein", CL;
+
+Q15:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET15, "Nein", CL;
+
+Q16:
+if (countitem(5171)<1 || countitem(969) <500 || countitem(7510) <10 ) goto NOIT;
+			next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET16, "Nein", CL;
+
+//Itemausgabe
+GET1:
+		next;
+	getitem 22121, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET2:
+		next;
+	getitem 22122, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET3:
+		next;
+	getitem 22123, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET4:
+		next;
+	getitem 22124, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET5:
+		next;
+	getitem 22125, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET6:
+		next;
+	getitem 22126, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET7:
+		next;
+	getitem 22127, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET8:
+		next;
+	getitem 22128, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET9:
+		next;
+	getitem 22129, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET10:
+		next;
+	getitem 22130, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET11:
+		next;
+	getitem 22131, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET12:
+		next;
+	getitem 22132, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET13:
+		next;
+	getitem 22133, 1;
+	delitem 22390, 1;
+	delitem 975, 1;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET14:
+		next;
+	getitem 22134, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET15:
+		next;
+	getitem 22135, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+
+GET16:
+		next;
+	getitem 22135, 1;
+	delitem 5171, 1;
+	delitem 969, 500;
+	delitem 7510, 10;
+	mes @n$;
+	mes "Viola - Hier hast du deinen speziellen Helm!";
+	cutin "", 255;
+		close;
+		
+NOIT:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Valkyrie Helm";
+	mes "500x Gold";
+	mes "10x Valhalla's Flower";
+	cutin "", 255;
+		close;
+										// CLOSE //
+CL:
+		next;
+	mes @n$;
+	mes "Schade, du bist meiner Kunst wohl nicht würdig.";
+		cutin "", 255;
+		close;
+}

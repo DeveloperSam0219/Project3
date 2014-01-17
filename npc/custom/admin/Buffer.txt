@@ -1,0 +1,108 @@
+invek,148,173,4	script	Buffer	466,{	
+	L0:
+		mes "[ ^8B0000Buffer^000000 ]";
+		mes "Hallo!";
+		mes "^000000Hier kannst du ^00FF00normale Buffs^000000 und ^FF0000Full Buffs^000000 bekommen.";
+		mes "^FF0000Full Buffs^000000 kosten dich aber eine ^FF69B4Buff Energie.^000000";
+		menu "Normal Buff", L1, "Full Buff", L2, "Was ist eine Buff Energie?", L3;
+		
+		//Normal Buff //
+		L1:
+			percentheal 100,100;
+			specialeffect2 462;
+			specialeffect2 338; 
+			sc_start SC_INCREASEAGI,900000,10;
+			sc_start SC_BLESSING,900000,10;
+			sc_start SC_MAGNIFICAT,900000,10;
+//if (agitcheck() == 0) {
+			next;
+			mes "[ ^8B0000Buffer^000000 ]";
+			mes "Welche Waffenverzauberung möchtest du?";
+			set .@i, select("^777777Keine^000000:Feuer Waffe:Eis Waffe:Blitz Waffe:Erd Waffe:Holy Waffe")-1;
+			if (.@i<7) {
+	        	setarray .@SC[0],40,96,97,98,99,37;
+	        	sc_start .@SC[.@i],7600000,5; }
+//	} else
+//	dispbottom "Während WoE kannst du kein Full oder Weapon Buff benutzen.";
+		close;
+		
+		// Full Buff //
+		L2:
+//			if (agitcheck() == 0) {
+			if (countitem(22040)<1) goto L7;
+			delitem 22040, 1;
+			setarray .@SC[0],35,40,41,72,73,74,75,110,115,120,121,21,23,29,30,32,151;
+			for(set .@i,0; .@i<getarraysize(.@SC); set .@i,.@i+1)
+	        	sc_start .@SC[.@i],1200000,(.@i>10)?10:5;
+			specialeffect2 908;
+			specialeffect2 909;
+			specialeffect2 910;
+			percentheal 100,100;
+			next;
+			mes "[ ^8B0000Buffer^000000 ]";
+			mes "Du erhälst ^FF0000Full Buffs^000000.";
+			next;
+			mes "[ ^8B0000Buffer^000000 ]";
+			mes "Welche Waffenverzauberung möchtest du?";
+			set .@i, select("^777777Keine^000000:Feuer Waffe:Eis Waffe:Blitz Waffe:Erd Waffe:Holy Waffe")-1;
+			if (.@i<7) {
+	        	setarray .@SC[0],40,96,97,98,99,37;
+	        	sc_start .@SC[.@i],7600000,5; }
+//	} else
+//	dispbottom "Während WoE kannst du kein Full oder Weapon Buff benutzen.";
+		close;
+		// -> Buff Energie erklärung //
+		L3:
+		next;
+		mes "[ ^8B0000Buffer^000000 ]";
+		mes "Eine ^FF69B4Buff Energie^000000 erhälst du alle 20 Minuten fürs Online bleiben.";
+		mes "Mit diesem kannst du den ^FF0000Full Buff Service^000000 benutzen.";
+		mes "Dabei wird das Item verbraucht.";
+		close;
+
+		// Buff Energie benötigt //
+		L7:
+		next;
+		mes "[ ^8B0000Buffer^000000 ]";
+		mes "Du hast benötigst eine ^FF69B4Buff Energie^000000.";
+		close;
+
+		L8:
+			mes "[ ^8B0000Buffer^000000 ]";
+			mes "Welche Waffenverzauberung möchtest du?";
+			set .@i, select("^777777Keine^000000:Feuer Waffe:Eis Waffe:Blitz Waffe:Erd Waffe:Holy Waffe")-1;
+			if (.@i<7) {
+	        	setarray .@SC[0],40,96,97,98,99,37;
+	        	sc_start .@SC[.@i],7600000,5; }
+		close;
+}
+
+dbarena1,50,52,4	duplicate(Buffer)	Buffer DB1	466
+dbarena2,50,52,4	duplicate(Buffer)	Buffer DB2	466
+dbarena3,50,52,4	duplicate(Buffer)	Buffer DB3	466
+dbarena4,50,52,4	duplicate(Buffer)	Buffer DB4	466
+
+//Städte
+prontera,159,187,4	duplicate(Buffer)	Buffer#1	466
+morocc,159,95,4	duplicate(Buffer)	Buffer#2	466
+geffen,116,63,6	duplicate(Buffer)	Buffer#3	466
+payon,158,223,4	duplicate(Buffer)	Buffer#4	466
+alberta,185,146,6	duplicate(Buffer)	Buffer#5	466
+izlude,126,119,6	duplicate(Buffer)	Buffer#6	466
+aldebaran,144,117,6	duplicate(Buffer)	Buffer#7	466
+xmas,144,137,6	duplicate(Buffer)	Buffer#8	466
+comodo,191,150,6	duplicate(Buffer)	Buffer#9	466
+yuno,157,170,6	duplicate(Buffer)	Buffer#10	466
+amatsu,196,83,2	duplicate(Buffer)	Buffer#11	466
+gonryun,156,122,6	duplicate(Buffer)	Buffer#12	466
+umbala,89,159,6	duplicate(Buffer)	Buffer#13	466
+louyang,214,120,6	duplicate(Buffer)	Buffer#14	466
+ayothaya,146,121,6	duplicate(Buffer)	Buffer#15	466
+jawaii,247,129,6	duplicate(Buffer)	Buffer#16	466
+lighthalzen,162,94,6	duplicate(Buffer)	Buffer#17	466
+hugel,91,149,6	duplicate(Buffer)	Buffer#18	466
+rachel,130,115,6	duplicate(Buffer)	Buffer#19	466
+veins,214,127,6	duplicate(Buffer)	Buffer#20	466
+moscovia,226,198,6	duplicate(Buffer)	Buffer#21	466
+mid_camp,215,244,4	duplicate(Buffer)	Buffer#22	466
+izlude,126,119,6	duplicate(Buffer)	Buffer#23	466

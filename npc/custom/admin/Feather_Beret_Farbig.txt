@@ -1,0 +1,212 @@
+ra_in01,388,66,4	script	Hope Estheim	480,{
+
+	set @n$, "[ ^8B0000Hope Estheim^000000 ]";	// NPC Name
+
+
+	mes @n$;
+	mes "Hallo Reisender,";
+	mes "Ich kann normale Feather Berets färben !";
+	mes "Wähle aus was du möchtest: ";
+	menu "Black Feather Beret", Q1, "Blue Feather Beret", Q2, "Cyan Feather Beret", Q3, "Gold Feather Beret", Q4, "Green Feather Beret", Q5, "Rose Feather Beret", Q6, "White Feather Beret", Q7, "Nichts", CL;
+
+										// QUEST //
+Q1:
+if (countitem(5170)<1 || countitem(916) < 50 || countitem(983) < 1 ) goto NOIT1;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET1, "Nein", CL;
+										// QUEST //
+Q2:
+if (countitem(5170)<1 || countitem(916) < 50 || countitem(978) < 1 ) goto NOIT2;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET2, "Nein", CL;
+										// QUEST //
+Q3:
+if (countitem(5170)<1 || countitem(916) < 50 || countitem(978) < 1 ) goto NOIT3;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET3, "Nein", CL;
+										// QUEST //
+Q4:
+if (countitem(5170)<1 || countitem(916) < 50 || countitem(976) < 1 ) goto NOIT4;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET4, "Nein", CL;
+Q5:
+if (countitem(5170)<1 || countitem(916) < 50 || countitem(979) < 1 ) goto NOIT5;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET5, "Nein", CL;
+										// QUEST //
+Q6:
+if (countitem(5170)<1 || countitem(916) < 50 || countitem(981) < 1 ) goto NOIT6;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET6, "Nein", CL;
+										// QUEST //
+Q7:
+if (countitem(5170)<1 || countitem(916) < 50 || countitem(982) < 1 ) goto NOIT7;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET7, "Nein", CL;
+GET1:
+		next;									// ITEMAUSGABE //
+	getitem 22157, 1;
+	delitem 5170, 1;
+	delitem 916, 50;
+	delitem 983, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+		close;
+GET2:
+		next;									// ITEMAUSGABE //
+	getitem 22158, 1;
+	delitem 5170, 1;
+	delitem 916, 50;
+	delitem 978, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+		close;
+GET3:
+		next;									// ITEMAUSGABE //
+	getitem 22160, 1;
+	delitem 5170, 1;
+	delitem 916, 50;
+	delitem 978, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+		close;
+GET4:
+		next;									// ITEMAUSGABE //
+	getitem 22163, 1;
+	delitem 5170, 1;
+	delitem 916, 50;
+	delitem 976, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+		close;
+GET5:
+		next;									// ITEMAUSGABE //
+	getitem 22164, 1;
+	delitem 5170, 1;
+	delitem 916, 50;
+	delitem 979, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+		close;
+GET6:
+		next;									// ITEMAUSGABE //
+	getitem 22165, 1;
+	delitem 5170, 1;
+	delitem 916, 50;
+	delitem 981, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+		close;
+GET7:
+		next;									// ITEMAUSGABE //
+	getitem 22166, 1;
+	delitem 5170, 1;
+	delitem 916, 50;
+	delitem 982, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+		close;
+
+										// NO ITEMS //
+NOIT1:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Feather Beret";
+	mes "50x Feather of Birds";
+	mes "1x Black Dyestuffs";
+		close;
+										// NO ITEMS //
+NOIT2:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Feather Beret";
+	mes "50x Feather of Birds";
+	mes "1x Cobaltblue Dyestuffs";
+		close;
+										// NO ITEMS //
+NOIT3:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Feather Beret";
+	mes "50x Feather of Birds";
+	mes "1x Cobaltblue Dyestuffs";
+		close;
+										// NO ITEMS //
+NOIT4:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Feather Beret";
+	mes "50x Feather of Birds";
+	mes "1x Lemon Dyestuffs";
+		close;
+NOIT5:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Feather Beret";
+	mes "50x Feather of Birds";
+	mes "1x Darkgreen Dyestuffs";
+		close;
+										// NO ITEMS //
+NOIT6:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Feather Beret";
+	mes "50x Feather of Birds";
+	mes "1x Violet Dyestuffs";
+		close;
+										// NO ITEMS //
+NOIT7:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Feather Beret";
+	mes "50x Feather of Birds";
+	mes "1x White Dyestuffs";
+		close;
+
+
+										// CLOSE //
+CL:
+		close;
+}

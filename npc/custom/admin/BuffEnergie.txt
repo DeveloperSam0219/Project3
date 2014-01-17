@@ -1,0 +1,15 @@
+-	script	20mins	-1,{
+OnPCLoginEvent:
+	addtimer(1200000, "20mins::OnTimerEnd");
+	end;
+OnTimerEnd:
+	if(!checkvending()){
+		dispbottom "Du warst 20 Minuten Online. Du erhälst eine Buff Energie!";
+		getitem(22040, 1);
+	addtimer(1200000, "20mins::OnTimerEnd");
+	}
+	end;
+OnPCLogoutEvent:
+	deltimer("20mins::OnTimerEnd");
+	end;
+}

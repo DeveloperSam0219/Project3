@@ -1,0 +1,28 @@
+invek,154,173,4	script	Identifizierer	89,{
+getinventorylist;
+for( set .@i,0; .@i < @inventorylist_count; set .@i, .@i + 1 ) {
+if ( @inventorylist_identify[.@i] == 1 ) continue;
+
+// Merchant's Identify skill
+if ( getskilllv(40) == 1 && Sp >= 10 ) heal 0,-10;
+
+// check if there is any Magnifier
+else if ( countitem(611) ) delitem 611,1;
+
+// base on Magnifier price, Rogue's Compulsion Discount skill
+else if ( getskilllv(224) && Zeny >= ( 100 - ( 5 + 4 * getskilllv(224) ) )* 2/5 )
+set Zeny, Zeny - ( 100 - ( 5 + 4 * getskilllv(224) ) )* 2/5;
+
+// base on Magnifier price, Merchants that not enough sp and learned Discount skill
+else if ( getskilllv(37) && Zeny >= ( 100 - ( 5 + 2 * getskilllv(37) ) )* 2/5 )
+set Zeny, Zeny - ( 100 - ( 5 + 2 * getskilllv(37) ) )* 2/5;
+
+// if none of the above, deduct the Zeny
+else if ( Zeny >= 40 ) set Zeny, Zeny - 40;
+
+// or stop the script if there the person not enough money
+else break;
+delitem2 @inventorylist_id[.@i],1,0,0,0,0,0,0,0;
+getitem @inventorylist_id[.@i],1;
+}
+}

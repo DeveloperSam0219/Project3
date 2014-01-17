@@ -1,0 +1,98 @@
+invek,151,172,4	script	Goldraum Warper	803,{
+
+	cutin "hu_alex01",2;
+	
+if ( GoldraumPass == 1 ) {
+if (countitem(22007)<1) goto NOPASS;
+	mes "[ ^0065DFGoldraum Warper^000000 ]";
+	mes "Es befinden sich gerade [^000088"+getmapusers("Goldraum")+"^000000] Spieler im Goldraum.";
+	mes "Möchtest du in den Goldraum?";
+next;
+	switch(select("Ja warp mich!","Nein.")) {
+case 1:
+warp "Goldraum",95,31;
+cutin "", 255;
+close;
+case 2:
+	mes "[ ^0065DFGoldraum Warper^000000 ]";
+	mes "Du bist jederzeit willkommen!";
+	cutin "", 255;
+close; }}
+
+if ( GoldraumPass == 0 ) {
+	mes "[ ^0065DFGoldroom Warper^000000 ]";
+	mes "Wie ich sehe besitzt du keinen Goldraum Pass.";
+	next;
+	mes "[ ^0065DFGoldroom Warper^000000 ]";
+	mes "Diesen benötigst du um in den Goldraum zu gelangen.";
+	next;
+	mes "[ ^0065DFGoldroom Warper^000000 ]";
+	mes "Möchtest du dir einen Goldraum Pass anfertigen lassen?";
+	menu "Ja ich möchte einen Pass", QPASS, "Nein, danke.", CL;
+close;
+}
+
+//Goldraum
+QPASS:
+if (countitem(969)<50 || countitem(4001) < 10 || countitem(4004) < 10 || countitem(4033) < 10 || countitem(7539) < 3 ) goto NOITEMS;
+	next;
+	mes "[ ^0065DFGoldraum Warper^000000 ]";
+	mes "Du hast alle Items gefunden.";
+	delitem 969, 50;
+	delitem 4001, 10;
+	delitem 4004, 10;
+	delitem 4033, 10;
+	delitem 7539, 3;
+	next;
+	mes "[ ^0065DFGoldraum Warper^000000 ]";
+	mes "Hier ist dein eigener Goldraum Pass.";
+	set GoldraumPass, 1;
+	getitem 22007, 1;
+	cutin "", 255;
+	close;
+
+NOITEMS:
+	next;
+	mes "[ ^0065DFGoldraum Warper^000000 ]";
+	mes "Dafür benötige ich folgendes:";
+	mes "50x Gold";
+	mes "10x Poring Card";
+	mes "10x Drops Card";
+	mes "10x Poporing Card";
+	mes "3x Poring Coin";
+	cutin "", 255;
+	close;
+	
+	
+NOPASS:
+	mes "[ ^0065DFGoldraum Warper^000000 ]";
+	mes "Du benötigst einen Goldraum Pass um in den Goldraum zu gelangen.";
+	cutin "", 255;
+	close;
+	
+CL:
+	next;
+	mes "[ ^0065DFGoldraum Warper^000000 ]";
+	mes "Schade!";
+	mes "Ohne Pass kein Einlass!";
+	cutin "", 255;
+	close;
+	}
+	
+//Zurück zur Main
+Goldraum,92,33,6	script	Goldraum Assistent	803,{
+	cutin "hu_alex01",2;
+	mes "[ ^0065DFGoldraum Assistent^000000 ]";
+	mes "Möchtest du zurück zur Maintown?";
+next;
+	switch(select("Ja ich möchte zurück.","Nein.")) {
+case 1:
+warp "invek",146,166;
+cutin "", 255;
+close;
+case 2:
+	mes "[ ^0065DFGoldraum Assistent^000000 ]";
+	mes "Bleib solange du möchtest.";
+	cutin "", 255;
+close; }
+}

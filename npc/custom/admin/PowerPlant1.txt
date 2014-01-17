@@ -1,0 +1,115 @@
+// -------------------- Power Plant Warper ------------------------
+
+// Adjust Warper Location Here
+invek,139,154,5	script	PP Agent#PP_warp	872,{
+
+sc_end sc_IMPOSITIO;
+sc_end sc_MAGNIFICAT;
+sc_end sc_GLORIA;
+sc_end sc_AETERNA;
+sc_end sc_CP_WEAPON;
+sc_end sc_CP_SHIELD;
+sc_end sc_CP_ARMOR;
+sc_end sc_CP_HELM;
+sc_end sc_CP_WEAPON;
+sc_end sc_CONCENTRATION;
+sc_end sc_ASSUMPTIO;
+sc_end sc_TRUESIGHT;
+sc_end sc_WINDWALK;
+sc_end sc_ENDURE;
+sc_end sc_CONCENTRATE;
+sc_end sc_ANGELUS;
+sc_end sc_BLESSING;
+sc_end sc_INCREASEAGI;
+sc_end sc_PRESERVE;
+
+	set .@name$, "^000088["+ strnpcinfo(1) + "]^000000";
+	mes .@name$;
+	mes "Hallo du!";
+	next;
+	mes .@name$;
+	mes "Ich wache über ein Kraftwerk namens ^0000FFPower Plant^000000";
+	next;
+	mes .@name$;
+	mes "Im ^0000FFPower Plant^000000 befinden sich gerade [^000088"+getmapusers("power_plant")+"^000000] Spieler.";
+	next;
+	mes .@name$;
+	mes "Möchtest du ins ^0000FFPower Plant^000000 eintreten?";
+	next;
+    if (select("Zeig es mir:Nein danke.") == 2)
+    {
+        mes .@name$;
+        mes "Okay, schönen Tag noch!";
+        close;
+    }
+    if (countitem(22011)<1) goto NOPASS;
+    switch(rand(1,14))
+    {
+        case 1:
+        warp "power_plant",91,60;
+        break;
+        
+        case 2:
+        warp "power_plant",95,79;
+        break;
+        
+        case 3:
+        warp "power_plant",90,94;
+        break;
+        
+        case 4:
+        warp "power_plant",77,98;
+        break;
+        
+        case 5:
+        warp "power_plant",65,92;
+        break;
+        
+        case 6:
+        warp "power_plant",56,98;
+        break;
+        
+        case 7:
+        warp "power_plant",46,92;
+        break;
+        
+        case 8:
+        warp "power_plant",44,78;
+        break;
+        
+        case 9:
+        warp "power_plant",50,65;
+        break;
+        
+        case 10:
+        warp "power_plant",45,53;
+        break;
+        
+        case 11:
+        warp "power_plant",62,47;
+        break;
+        
+        case 12:
+        warp "power_plant",74,53;
+        break;
+        
+        case 13:
+        warp "power_plant",83,48;
+        break;
+        
+        case 14:
+        warp "power_plant",96,50;
+        break;
+
+    }
+    end;
+    
+NOPASS:
+mes .@name$;
+mes "Du benötigst einen PvP Pass um in die Power Plant Arena zu gelangen.";
+next;
+mes .@name$;
+mes "Sprich mit dem PvP Pass Master.";
+close;
+
+}

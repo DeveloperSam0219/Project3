@@ -1,0 +1,17 @@
+invek,181,159,4	script	Poring Heaven Warper	508,{
+//Poring Heaven Warper
+	mes "^0065DF[Poring]^000000";
+	mes "Hey jo! Ich kann dich nach Poring Heaven warpen.";
+next;
+	mes "^0065DF[Poring]^000000";
+	mes "Möchtest du nach Poring Heaven jo?";
+	switch(select("Yeah ich will!","Neee ich mag nicht.")) {
+case 1:
+warp "pay_fild04",25,165;
+close;
+case 2:
+next;
+	mes "^0065DF[Poring]^000000";
+	mes "Du bist hier willkommen bro :D";
+close; }
+}

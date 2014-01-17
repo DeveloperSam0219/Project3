@@ -1,0 +1,20 @@
+invek,157,176,4	script	Endless Tower Warper	991,{
+//Endless Tower
+	mes "[ ^0065DFWächter^000000 ]";
+	mes "Guten Tag, ich bin der Wächter von Mystic Island.";
+next;
+	mes "[ ^0065DFWächter^000000 ]";
+	mes "Dort findest du den Endless Tower.";
+next;
+	mes "[ ^0065DFWächter^000000 ]";
+	mes "Möchtest du, dass ich dir dort hin teleportiere?";
+	switch(select("Ja","Nein")) {
+case 1:
+warp "e_tower",76,81;
+close;
+case 2:
+next;
+	mes "[ ^0065DFWächter^000000 ]";
+	mes "Komm wieder, wenn du bereit bist.";
+close; }
+}

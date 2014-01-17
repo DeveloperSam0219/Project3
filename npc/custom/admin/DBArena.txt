@@ -1,0 +1,30 @@
+invek,140,172,6	script	DB Arena Warper	708,{
+//DBArena
+	set @gotoCount, 0;
+	mes "[ ^000088DB Arena Warper^000000 ]";
+	mes "Möchtest du in die ^ff0000Dead Branch Arena^000000?";
+next;
+	switch(select("DB Arena 1 [^000088"+getmapusers("dbarena1")+"^000000]","DB Arena 2 [^000088"+getmapusers("dbarena2")+"^000000]","DB Arena 3 [^000088"+getmapusers("dbarena3")+"^000000]","DB Arena 4 [^000088"+getmapusers("dbarena4")+"^000000]","^ff0000Abbrechen^000000")) {
+case 1:
+warp "dbarena1",49,50;
+close;
+case 2:
+warp "dbarena2",49,50;
+close;
+case 3:
+warp "dbarena3",49,50;
+close;
+case 4:
+warp "dbarena4",49,50;
+close;
+case 5:
+	mes "[ ^000088DB Arena Warper^000000 ]";
+	mes "Du bist hier immer willkommen.";
+close; }
+}
+
+//DB Arena Shops
+dbarena1,47,52,4	shop	DB Shop 1	897,12103:5000000,604:10000
+dbarena2,47,52,4	shop	DB Shop 2	897,12103:5000000,604:10000
+dbarena3,47,52,4	shop	DB Shop 3	897,12103:5000000,604:10000
+dbarena4,47,52,4	shop	DB Shop 4	897,12103:5000000,604:10000

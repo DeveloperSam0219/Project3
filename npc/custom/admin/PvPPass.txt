@@ -1,0 +1,38 @@
+invek,162,148,4	script	PvP Pass Master	831,{
+
+
+	set .@name$, "[ ^8B0000PvP Pass Master^000000 ]";
+
+if ( #PVPPass==1 ) {
+	cutin "jpn_jennifer01",2;
+	mes .@name$;
+	mes "Du kannst nur einen Pass pro Account beziehen!";
+	cutin "", 255;
+close; }
+	cutin "jpn_jennifer01",2;
+	mes .@name$;
+	mes "Hallo lieber Spieler.";
+	next;
+	mes .@name$;
+	mes "Meine Aufgabe ist es PvP Pässe zu verteilen.";
+	next;
+	mes .@name$;
+	mes "Diese benötigt man um in die PvP Arena zu gelangen.";
+	next;
+	mes .@name$;
+	mes "Dabei möchte ich die Spieler gleichzeitig auf die PvP Regeln aufmerksam machen.";
+	mes "....";
+	mes "Werden diese missachtet kann es zu einem Passentzug kommen.";
+	next;
+	mes .@name$;
+	mes "Lese dir daher UNBEDINGT die PvP Regeln im Forum durch.";
+	next;
+	mes .@name$;
+	mes "Hier ist dein PvP Pass und pass gut drauf auf, denn diesen gibt es nur einmal pro Account!";
+	getitem 22011,1;
+	set #PVPPass, 1;
+next;
+	mes .@name$;
+	mes "Viel Spaß in der PvP Arena ^_^";
+		cutin "", 255;
+close; }

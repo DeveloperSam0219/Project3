@@ -1,0 +1,11 @@
+//==================================================
+// Lightninghalzen Dungeon 04
+//==================================================
+
+lhz_dun04,0,0,0,0	monster	Xell Dincht	2529,70,5000,0,0
+lhz_dun04,0,0,0,0	monster	Theo Barde	2530,70,5000,0,0
+lhz_dun04,0,0,0,0	monster	Creator Nora	2531,70,5000,0,0
+lhz_dun04,0,0,0,0	monster	Dancer Kirsty	2532,70,5000,0,0
+lhz_dun04,0,0,0,0	monster	Paladin Velomio	2535,70,5000,0,0
+lhz_dun04,0,0,0,0	monster	Amber Dyze	2537,70,5000,0,0
+lhz_dun04,0,0,0,0	monster	Stalker Liz	2539,70,5000,0,0

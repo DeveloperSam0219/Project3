@@ -1,0 +1,18 @@
+//Durchgang GM Haus -> Saal
+gm_haus,35,66,0	warp	gmhaus01	1,1,gm_haus,20,105
+gm_haus,20,102,0	warp	gmhaus02	1,1,gm_haus,35,64
+
+//Durchgang Saal -> Küche
+gm_haus,33,128,0	warp	gmhaus03	1,1,gm_haus,23,168
+gm_haus,23,166,0	warp	gmhaus04	1,1,gm_haus,33,125
+
+//Durchgang GM Haus -> GM Zone
+gm_haus,47,55,0	warp	gmhaus05	1,1,gm_haus,176,71
+gm_haus,174,71,0	warp	gmhaus06	1,1,gm_haus,45,55
+
+//Durchgang Küche -> Koridor
+gm_haus,27,188,0	warp	gmhaus07	1,1,gm_haus,41,37
+gm_haus,180,170,0	warp	gmhaus08	1,1,gm_haus,27,185
+invek,140,209,0	warp	invek09	1,1,gm_haus,41,37
+gm_haus,45,39,0	warp	invek10	1,1,invek,140,205
+tha_t07,25,166,0	warp	tha_t11	1,1,thana_boss,136,126

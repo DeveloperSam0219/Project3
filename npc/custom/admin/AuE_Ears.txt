@@ -1,0 +1,94 @@
+louyang,236,212,4	script	Xi Long Gui	409,{
+
+	set @n$, "[ ^8B0000Xi Long Gui^000000 ]";	// NPC Name
+
+
+	mes @n$;
+	mes "Guten Tag,";
+	mes "... ich verfüge über die Gabe Angel und Evil Wing Ears zu verstärken.";
+		next;
+	mes @n$;
+	mes "Hast du Interesse an diesen kostbaren Ohren?";
+	menu "Ja sicher! ", MES1, "Nein, danke.", CL;
+
+MES1:
+		next;
+	mes @n$;
+	mes "Wähle aus welche Ohren du möchtest:";
+	menu "Angel Wing Ears", Q1, "Evil Wing Ears", Q2;
+										// QUEST //
+Q1:
+if (countitem(2254)<10 || countitem(714) < 10 || countitem(5074) < 1 || countitem(2286) < 10 ) goto NOIT1;
+		next;
+	mes @n$;
+	mes "Sehr gut, du hast alle Items gefunden.!";
+		next;
+	mes @n$;
+	mes "Möchtest du nun dass ich die die Ohren herstellen?";
+	menu "Ja !", GET1, "Nein noch nicht.", CL;
+
+
+Q2:
+if (countitem(2255)<10 || countitem(714) < 10 || countitem(5068) < 1 || countitem(2286) < 10 ) goto NOIT2;
+		next;
+	mes @n$;
+	mes "Sehr gut, du hast alle Items gefunden.!";
+		next;
+	mes @n$;
+	mes "Möchtest du nun dass ich die die Ohren herstelle?";
+	menu "Ja !", GET2, "Nein noch nicht.", CL;
+
+GET1:
+		next;									// ITEMAUSGABE //
+	getitem 22389, 1;
+	delitem 2254, 10;
+	delitem 714, 10;
+	delitem 5074, 1;
+	delitem 2286, 10;
+	mes @n$;
+	mes "So .. hier hast du deine speziellen Ohren !";
+		close;
+
+GET2:
+		next;									// ITEMAUSGABE //
+	getitem 22390, 1;
+	delitem 2255, 10;
+	delitem 714, 10;
+	delitem 5068, 1;
+	delitem 2286, 10;
+	mes @n$;
+	mes "So .. hier hast du deine speziellen Ohren !";
+		close;
+										// NO ITEMS //
+NOIT1:
+		next;
+	mes @n$;
+	mes "Du benötigst:";
+	mes "10x Angel Wing";
+	mes "10x Elven Ears";
+	mes "10x Emperium";
+	mes "1x Angel Wing Ears";
+		next;
+	mes @n$;
+	mes "Bringe mir diese Items und ich werde dir die Ohren herstellen.";
+		close;
+
+NOIT2:
+		next;
+	mes @n$;
+	mes "Du benötigst:";
+	mes "10x Evil Wing";
+	mes "10x Elven Ears";
+	mes "10x Emperium";
+	mes "1x Evil Wing Ears";
+		next;
+	mes @n$;
+	mes "Bringe mir diese Items und ich werde dir die Ohren herstellen.";
+		close;
+										// CLOSE //
+CL:
+		next;
+	mes @n$;
+	mes "So sei es.";
+		close;
+}

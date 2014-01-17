@@ -1,0 +1,2 @@
+//Quicktooldealer
+invek,146,176,1	shop	Quickseller	58,601:60,608:5000,678:1000000

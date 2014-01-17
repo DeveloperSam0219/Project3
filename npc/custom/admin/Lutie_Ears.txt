@@ -1,0 +1,111 @@
+xmas,148,188,4	script	Trauriges Mädchen	793,{
+
+	set @n$, "^FF69B4[Trauriges Mädchen]^000000";	// NPC Name
+
+if ( ALLITEMS == 1 ) {
+	ALLITMES:
+	mes @n$;
+	mes "Möchtest du nun dass ich die die Ohren herstelle?";
+	menu "Chiiears", GET1, "High Elven Ears", GET2, "Inumimi Ears", GET3, "Später", CL2;
+	
+}
+
+	mes @n$;
+	mes "*Schluchz* ...";
+	menu "Was ist denn los Kleines?", MES1;
+MES1:
+	next;
+	mes @n$;
+	mes "Ich habe den Inhalt meines Rucksacks verloren .. *Schluchz*";
+	next;
+	menu "Was war denn alles in deinem Rucksack?", START, "Pech gehabt.", CL;
+	
+										// QUEST //
+START:
+if (countitem(750)<1 || countitem(7206) < 1 || countitem(742) < 1 || countitem(7212) < 1 || countitem(7268) < 1 || countitem(7277) < 1 || countitem(751) < 1 || countitem(741) < 1 || countitem(740) < 1 || countitem(754) < 1 || countitem(752) < 1 || countitem(743) < 1 || countitem(753) < 1 || countitem(529) < 100 || countitem(530) < 100 ) goto NOITEMS;
+		next;
+	delitem 750, 1;
+	delitem 7206, 1;
+	delitem 742, 1;
+	delitem 7212, 1;
+	delitem 7268, 1;
+	delitem 7277, 1;
+	delitem 751, 1;
+	delitem 741, 1;
+	delitem 740, 1;
+	delitem 754, 1;
+	delitem 752, 1;
+	delitem 743, 1;
+	delitem 753, 1;
+	delitem 529, 100;
+	delitem 530, 100;
+	set ALLITEMS, 1;
+	mes @n$;
+	mes "*Schluchz* .. Danke du hast meine Items gefunden!";
+		next;
+	mes @n$;
+	mes "Als Belohnung darfst du dir eines dieser Ohren aussuchen:";
+	menu "Chiiears", GET1, "High Elven Ears", GET2, "Inumimi Ears", GET3, "Später", CL2;
+
+	
+GET1:
+		next;									// ITEMAUSGABE //
+	getitem 22385, 1;
+	set ALLITEMS, 0;
+	mes @n$;
+	mes "So .. hier hast du deine speziellen Ohren!";
+		close;
+
+GET2:
+		next;									// ITEMAUSGABE //
+	getitem 22386, 1;
+	set ALLITEMS, 0;
+	mes @n$;
+	mes "So .. hier hast du deine speziellen Ohren!";
+		close;
+		
+GET3:
+		next;									// ITEMAUSGABE //
+	getitem 22387, 1;
+	set ALLITEMS, 0;
+	mes @n$;
+	mes "So .. hier hast du deine speziellen Ohren!";
+		close;
+		
+										// NO ITEMS //
+NOITEMS:
+		next;
+	mes @n$;
+	mes "1x Baphomet Doll";
+	mes "1x Black Cat Doll";
+	mes "1x Chonchon Doll";
+	mes "1x Hung Doll";
+	mes "1x Little Ghost Doll";
+	mes "1x Munak Doll";
+	mes "1x Osiris Doll";
+	mes "1x Poring Doll";
+	mes "1x Puppet";
+	mes "1x Raccoon Doll";
+	mes "1x Rocker Doll";
+	mes "1x Spore Doll";
+	mes "1x Yoyo Doll";
+	mes "100x Candy";
+	mes "100x Candy Cane";
+		next;
+	mes @n$;
+	mes "Bringe mir diese Items und ich werde dch belohnen. *Heul*";
+		close;
+
+										// CLOSE //
+CL:
+		next;
+	mes @n$;
+	mes "*Schluchz* ... *Heul*";
+		close;
+		
+CL2:
+		next;
+	mes @n$;
+	mes "Wie du willst .. ich warte hier.";
+		close;
+}

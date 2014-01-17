@@ -1,0 +1,38 @@
+prtv_in02,144,42,7	script	Special Refiner	63,{
+
+mes .n$;
+mes "Hallo...";
+mes "Möchtest du zu 100% sicher refinen?";
+next;
+mes .n$;
+	if( select( "Ja:Nein" ) == 1 ) {
+		if( countitem( .Refineschein ) ) {
+			mes "Was möchtest du denn refinen?";
+			set @slot, select( ( ( getequipid( 1 ) ) ? getequipname( 1 ) : "^ff0000Kopf oben^000000" ) , ( ( getequipid( 9 ) ) ? getequipname( 9 ) : "^ff0000Kopf mitte^000000" ) , ( ( getequipid( 10 ) ) ? getequipname( 10 ) : "^ff0000Kopf unten^000000" ) , ( ( getequipid( 2 ) ) ? getequipname( 2 ) : "^ff0000Rüstung^000000" ) , ( ( getequipid( 3 ) ) ? getequipname( 3 ) : "^ff0000Linke Hand^000000" ) , ( ( getequipid( 4 ) ) ? getequipname( 4 ) : "^ff0000Rechte Hand^000000" ) , ( ( getequipid( 5 ) ) ? getequipname( 5 ) : "^ff0000Mantel^000000" ) , ( ( getequipid( 6 ) ) ? getequipname( 6 ) : "^ff0000Schuhe^000000" ) , ( ( getequipid( 7 ) ) ? getequipname( 7 ) : "^ff0000Accessoire 1^000000" ) , ( ( getequipid( 8 ) ) ? getequipname( 8 ) : "^ff0000Accessory 2^000000" ) );
+			next;
+			mes .n$;
+			if( getequiprefinerycnt( ( ( @slot == 1 ) ? @slot : ( ( @slot == 2 || @slot == 3 ) ? ( @slot + 7 ) : ( @slot - 2 ) ) ) ) < .maxrefine ) {
+				mes "Bist du dir sicher, dass du " + getequipname( ( ( @slot == 1 ) ? @slot : ( ( @slot == 2 || @slot == 3 ) ? ( @slot + 7 ) : ( @slot - 2 ) ) ) ) + " refinen möchtest?";
+				if( select( "Ja:Nein" ) == 1 ) {
+					successrefitem ( ( @slot == 1 ) ? @slot : ( ( @slot == 2 || @slot == 3 ) ? ( @slot + 7 ) : ( @slot - 2 ) ) );
+					delitem .Refineschein, 1;
+					mes "Das wars schon..";
+					mes "Viel Spaß damit.";
+				}else{
+					mes "Darum frag ich nach...";
+				}
+			}else{
+				mes "Dieses Teil ist schon maximal refined";
+			}
+		}else{
+			mes "Du brauchst einen " + getitemname( .Refineschein ) + " zum refinen.";
+		}
+	}else{
+		mes "Na dann nicht...";
+	}
+	close;
+OnInit:
+	set .n$, "[Refiner]";
+	set .Refineschein, 22010;
+	set .maxrefine, 10;
+}

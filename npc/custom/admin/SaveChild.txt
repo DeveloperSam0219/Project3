@@ -1,0 +1,23 @@
+invek,133,158,6	script	Save Child	877,{
+	
+	cutin "nyuang_1",2;
+	mes "[ ^FF69B4Save Child^000000 ]";
+	mes "Möchtest du Invek als dein Speicherpunkt markieren?";
+next;
+	switch(select("Ja","Nein")) {
+case 1:
+		save("invek", 146, 166);
+		message strcharinfo(0),"Invek wurde als Speicherpunkt gesetzt.";
+	mes "[ ^FF69B4Save Child^000000 ]";
+	mes "Schwupp di wupp ~ das wars.";
+next;
+	mes "[ ^FF69B4Save Child^000000 ]";
+	mes "Komm wieder wenn du deinen Speicherpunkt markieren willst.";
+	cutin "", 255;
+close;
+case 2:
+	mes "[ ^FF69B4Save Child^000000 ]";
+	mes "Komm wieder wenn du deinen Speicherpunkt markieren willst.";
+	cutin "", 255;
+close; }
+}

@@ -1,0 +1,10 @@
+//==================================================
+// Lightninghalzen Dungeon 2.5
+//==================================================
+
+lhz_dun02_5,0,0,0,0	monster	Assassin Chris	2528,80,5000,0,0
+lhz_dun02_5,0,0,0,0	monster	Hunter Chiara	2533,80,5000,0,0
+lhz_dun02_5,0,0,0,0	monster	Knight Ashi	2534,80,5000,0,0
+lhz_dun02_5,0,0,0,0	monster	Priest Serah	2536,80,5000,0,0
+lhz_dun02_5,0,0,0,0	monster	Blacksmith Marc	2538,80,5000,0,0
+lhz_dun02_5,0,0,0,0	monster	Wizard Dora	2541,80,5000,0,0

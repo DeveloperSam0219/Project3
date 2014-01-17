@@ -1,0 +1,22 @@
+-	script	LuckyPick	-1,{
+OnInit:
+set .LuckyTime,rand(24);
+
+OnClock0000:
+if( gettime(3) == .LuckyTime ){
+set .DelayMin,rand(60);
+sleep ( .DelayMin * 60000 );
+while(1){
+  query_sql "select account_id from `char` where online = 1 order by rand() limit 1", .@aid;
+  attachrid .@aid;
+  if( checkvending() ){
+   detachrid();
+   continue;
+   }
+  announce strcharinfo(0) +" hat das Lucky Pick Event gewonnen!", 0;
+  getitem 7179,1;
+  break;
+}
+}
+end;
+}

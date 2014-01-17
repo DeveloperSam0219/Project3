@@ -1,0 +1,57 @@
+invek,137,174,6	script	PvP Warper	447,{
+
+sc_end SC_IMPOSITIO;
+sc_end SC_MAGNIFICAT;
+sc_end SC_GLORIA;
+sc_end SC_AETERNA;
+sc_end SC_CP_WEAPON;
+sc_end SC_CP_SHIELD;
+sc_end SC_CP_ARMOR;
+sc_end SC_CP_HELM;
+sc_end SC_CP_WEAPON;
+sc_end SC_CONCENTRATION;
+sc_end SC_ASSUMPTIO;
+sc_end SC_TRUESIGHT;
+sc_end SC_WINDWALK;
+sc_end SC_ENDURE;
+sc_end SC_CONCENTRATE;
+sc_end SC_ANGELUS;
+sc_end SC_BLESSING;
+sc_end SC_INCREASEAGI;
+sc_end SC_PRESERVE;
+
+//PvP Warper
+mes "[ ^000088PvP Arena Warper^000000 ]";
+mes "Möchtest du die PvP Arena betreten?";
+next;
+switch(select("Normal PvP [^000088"+getmapusers("n_pvp")+"^000000]","Hardcore PvP [^000088"+getmapusers("artz_pvp")+"^000000]","Test PvP [^000088"+getmapusers("norm_pvp")+"^000000]","^ff0000Abbrechen^000000")) {
+case 1:
+if (countitem(22011)<1) goto NOPASS;
+announce ""+strcharinfo(0)+" ist in die PvP Arena eingetreten!", bc_map;
+warp "n_pvp",0,0;
+close;
+case 2:
+announce ""+strcharinfo(0)+" ist in die Hardcore PvP Arena eingetreten!", bc_map;
+warp "artz_pvp",0,0;
+close;
+case 3:
+if (countitem(22011)<1) goto NOPASS;
+warp "norm_pvp",0,0;
+close;
+case 4:
+mes "[ ^000088PvP Arena Warper^000000 ]";
+mes "Dann eben nicht.";
+close; }
+
+NOPASS:
+mes "[ ^000088PvP Arena Warper^000000 ]";
+mes "Du benötigst einen PvP Pass um in die PvP Arena zu gelangen.";
+next;
+mes "[ ^000088PvP Arena Warper^000000 ]";
+mes "Sprich mit dem PvP Pass Master.";
+close;
+OnInit:
+waitingroom "PvP Arena",0;
+end;
+}
+

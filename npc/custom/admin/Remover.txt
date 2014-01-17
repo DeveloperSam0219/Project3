@@ -1,0 +1,147 @@
+//===== rAthena Script =======================================
+//= Card Removal NPC
+//===== By: ==================================================
+//= TyrNemesis^
+//===== Current Version: =====================================
+//= 1.2
+//===== Compatible With: =====================================
+//= rAthena SVN
+//===== Description: =========================================
+//= Removes cards from equipped items.
+//===== Additional Comments: =================================
+//= 1.0 First version. [TyrNemesis^]
+//= 1.2 Optimized and fixed getequipname menu. [Kisuka]
+//============================================================
+
+prtv_in01,94,179,6	script	Wise Old Women#eAcustom	78,{
+	set .zenycost,200000; // Set base cost in zeny of the card remover services
+	set .percardcost,25000; // set cost per card of the card remover services
+	set .faildestroy,0; // Should the card remover have a chance of failure that destroys items? 1 = Yes, 0 = No.
+	mes "[Weise alte Frau]";
+	mes "Guten Tag. Ich habe die Macht um Cards, die deine Ausrüstung verstärken zu entfernen. Möchtest du jetzt cards entfernen?";
+	next;
+	switch(select("Ja ich möchte.:Was muss ich zahlen?:Nein danke.")) {
+	case 1:
+		mes "[ ^000088Weise alte Frau^000000 ]";
+		mes "Sehr gut. Wähle aus wo ich welche Cards entfernen soll: ";
+		next;
+
+		setarray .@position$[1], "Head","Body","Left hand","Right hand","Robe","Shoes","Accessory 1","Accessory 2","Head 2","Head 3";
+		set .@menu$,"";
+		for( set .@i,1; .@i <= 10; set .@i,.@i+1 )
+		{
+			if( getequipisequiped(.@i) )
+			set .@menu$, .@menu$ + .@position$[.@i] + "-" + "[" + getequipname(.@i) + "]";
+
+			set .@menu$, .@menu$ + ":";
+		}
+		set .@part,select(.@menu$);
+		if(!getequipisequiped(.@part)) {
+			mes "[Wise Old Woman]";
+			mes "Da du nichts trägst, gibt es nichts zu entfernen.";
+			close;
+		}
+		if(getequipcardcnt(.@part) == 0) {
+			mes "[Wise Old Woman]";
+			mes "Ich kann diese card nicht entfernen.";
+			close;
+		}
+		set .@cardcount,getequipcardcnt(.@part);
+		
+		if (!checkweight(1202,(.@cardcount+1))) { 
+			mes "^3355FFEinen Moment!";
+			mes "Es gibt ein Problem";
+			mes "du kannst den Service nicht mehr nutzen, da";
+			mes "du hast zu viel Gewicht bei dir hast.";
+			mes "Verstau deine Items in der Storage und komm wieder~";
+			close;
+		}
+		mes "[ ^000088Weise alte Frau^000000 ]";
+		mes "Dieses Item hat " + .@cardcount + " Card(s) in sich. Um die cards zu entfernen benötige ich " + (.zenycost+(.@cardcount * .percardcost)) + " zeny, ein ^0000FFStar Crumb^000000, und einen ^0000FFYellow Gemstone^000000.";
+		next;
+		if(select("Okay, tu es..:Nein, lieber nicht") == 2) {
+			mes "[Weise alte Frau]";
+			mes "Sehr gut, komm wieder wenn du etwas entfernen willst.";
+			close;
+		}
+		if((Zeny < (.zenycost+(.@cardcount * .percardcost))) || (countitem(1000) < 1) || (countitem(715) < 1)) {
+			mes "[Weise alte Frau]";
+			mes "Du hast nicht alle Items, die ich benötige.";
+			close;
+		}
+		mes "[ ^000088Weise alte Frau^000000 ]";
+		mes "Bevor ich benginne möchte ich dich warnen, dass es eine Chance gibt das der Prozess fehlschlägt.";
+		next;
+		switch(select("Ich habe meine Meinung geändert.:Das Item.:Die Cards")) {
+		case 1:
+			mes "[ ^000088Weise alte Frau^000000 ]";
+			mes "Sehr gut, komm wieder wenn du etwas entfernen willst.";
+			close;
+		case 2:
+			set .@failtype,1;
+			break;
+		case 3:
+			set .@failtype,2;
+		}
+		mes "[ ^000088Weise alte Frau^000000 ]";
+		mes "Sehr gut, ich werde beginnen.";
+		set Zeny,Zeny - (.zenycost+(.@cardcount * .percardcost));
+		delitem 1000,1;
+		delitem 715,1;
+		
+		// Replace the constants in the next 3 lines with failure chance values defined in refine_db.txt
+		// First value = Total failure chance (item and cards destroyed)
+		// Second value = Partial failure chance (one or the other is destroyed, player decides which one is safe)
+		// Third value = Harmless failure chance (all that's lost is your investment)
+
+		set .@failchance,rand(100);
+		if (.faildestroy==1) {
+			if(.@failchance < 2) {
+				next;
+				failedremovecards .@part,0;
+				mes "[Weise alte Frau]";
+				mes "Der Prozess war ein totaler Reinfall!";
+				close;
+			}
+
+			if(.@failchance < 8) {
+				if (.@failtype == 1) {
+					next;
+					failedremovecards .@part,1;
+					mes "[Wise Old Woman]";
+					mes "Ich habe es geschafft das Item zu retten.";
+					close;
+				}
+
+				if (.@failtype == 2) {
+					next;
+					failedremovecards .@part,2;
+					mes "[Wise Old Woman]";
+					mes "Ich habe es geschafft die Card(s) zu retten.";
+					close;
+				}
+			}
+		}
+
+		if(.@failchance < 10) {
+			next;
+			failedremovecards .@part,3;
+			mes "[Weise alte Frau]";
+			mes "Ich habe es nicht geschaftt es zu entfernen. Beide Items sind jedoch erhalten.";
+			close;
+		}
+		next;
+		successremovecards .@part;
+		mes "[ ^000088Weise alte Frau^000000 ]";
+		mes "Der Prozess ist gelungen. Hier ist dein Item und deine Card(s)";
+		close;
+	case 2:
+		mes "[ ^000088Weise alte Frau^000000 ]";
+		mes "Ich berechne ein Pauschalhonorar von "+.zenycost+" zeny, plus "+.percardcost+" Zeny für jede Card, die ich aus dem Item zu entfernt habe.";
+		close;
+	case 3:
+		mes "[ ^000088Weise alte Frau^000000 ]";
+		mes "Sehr gut, komm wieder wenn du etwas entfernen willst.";
+		close;
+	}
+}

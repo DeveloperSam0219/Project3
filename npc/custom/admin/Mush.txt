@@ -1,0 +1,53 @@
+gm_haus,25,63,5	script	Mushroom	1084,{
+mes "[ Find The Mushroom ]";
+if (!.Status)
+mes "Im moment ist kein Event!";
+else {
+mes "Es sind "+.Spawn+" Mushrooms übrig "+.Map$+"!";
+mes "Finde und töte die mushrooms um "+getitemname(.Prize)+" zu gewinnen!";
+}
+if (.Status || getgmlevel() < .GM) close;
+mes "Event starten?";
+next;
+if(select("- Nein:- Ja") == 1) close;
+donpcevent strnpcinfo(0)+"::OnMinute10";
+mes "[ Find The Mushroom ]";
+mes "Event wurde gestartet!";
+close;
+
+OnInit:
+set .Prize,7539; // Reward item ID
+set .Amount,1; // Reward item amount
+set .GM,99; // GM level required to access NPC
+setarray .Maps$[0],"morocc","invek","prontera","aldebaran"; // Possible maps
+end;
+
+OnClock0200:
+OnClock0500:
+OnClock0800:
+OnClock1100:
+OnClock1400:
+OnClock1700:
+OnClock2000:
+OnClock2300:
+if (.Status) end;
+set .Status,1;
+set .Spawn,rand(4,8); // How many Mushrooms should spawn?
+set .Map$,.Maps$[rand(getarraysize(.Maps$))];
+killmonster .Map$,"All";
+monster .Map$,0,0,"Töte mich!",1084,.Spawn,strnpcinfo(0)+"::OnMobKilled";
+announce "Finde den Mushroom : Es wurdem insgesamt "+.Spawn+" Mushrooms in "+.Map$+" gespawnt!",0;
+sleep 2500;
+announce "Finde den Mushroom : Für jeden Mushroom, den du tötest erhälst du einen "+getitemname(.Prize)+"!",0;
+end;
+
+OnMobKilled:
+set .Spawn, .Spawn - 1;
+getitem .Prize, .Amount;
+if (.Spawn) announce "[ "+strcharinfo(0)+" ] hat einen Mushroom getötet. Es sind noch "+.Spawn+" Mushroom(s) übrig.",bc_map;
+else {
+announce "Das The Find the Mushroom Event ist zu ende. Alle Mushrooms wurden getötet.",0;
+set .Status,0;
+}
+end;
+}

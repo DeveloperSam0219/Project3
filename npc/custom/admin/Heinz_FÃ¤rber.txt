@@ -1,0 +1,577 @@
+lhz_in02,82,210,0	script	Heinz	122,{
+
+	set @n$, "[ ^3399FFHeinz^000000 ]";	// NPC Name
+
+	cutin "job_alche_vincent",2;
+		mes @n$;
+	mes "Hallo Abenteurer !";
+	mes "Ich bin ein Meisterfärber in Sachen Customs!";
+	mes "Wähle aus was du möchtest: ";
+	menu "Gangster Scarf", UQ1, "Petal", UQ2, "Assassin Mask", UQ3;
+
+
+UQ1:
+		next;
+	mes @n$;
+	mes "Welche Farbe darf es sein?";
+	menu "Black Gangster Scarf", Q1, "Blue Gangster Scarf", Q2, "Cyan Gangster Scarf", Q3, "Gold Gangster Scarf", Q4, "Green Gangster Scarf", Q5, "Purple Gangster Scarf", Q6, "White Gangster Scarf", Q7;
+
+
+UQ2:
+		next;
+	mes @n$;
+	mes "Welche Farbe darf es sein?";
+	menu "Black Petal", Q8, "Cyan Petal", Q9, "Green Petal", Q10, "Purple Petal", Q11;
+
+UQ3:
+		next;
+	mes @n$;
+	mes "Welche Farbe darf es sein?";
+	menu "Black Assassin Mask", Q12, "Blue Assassin Mask", Q13, "Cyan Assassin Mask", Q14, "Gold Assassin Mask", Q15, "Green Assassin Mask", Q16, "Purple Assassin Mask", Q17, "Red Assassin Mask", Q18, "White Assassin Mask", Q19;
+
+Q1:
+if (countitem(7216)<255 || countitem(983) < 1 ) goto NOIT1;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET1, "Nein", CL;
+										// QUEST //
+Q2:
+if (countitem(7216)<255 || countitem(978) < 1 ) goto NOIT2;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET2, "Nein", CL;
+										// QUEST //
+Q3:
+if (countitem(7216)<255 || countitem(978) < 1 ) goto NOIT3;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET3, "Nein", CL;
+										// QUEST //
+Q4:
+if (countitem(7216)<255 || countitem(976) < 1 ) goto NOIT4;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET4, "Nein", CL;
+Q5:
+if (countitem(7216)<255 || countitem(979) < 1 ) goto NOIT5;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET5, "Nein", CL;
+										// QUEST //
+Q6:
+if (countitem(7216)<255 || countitem(981) < 1 ) goto NOIT6;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET6, "Nein", CL;
+										// QUEST //
+Q7:
+if (countitem(7216)<255 || countitem(982) < 1 ) goto NOIT7;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET7, "Nein", CL;
+
+Q8:
+if (countitem(5206)<1 || countitem(983) < 1 ) goto NOIT8;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET8, "Nein", CL;
+										// QUEST //
+Q9:
+if (countitem(5206)<1 || countitem(978) < 1 ) goto NOIT9;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET9, "Nein", CL;
+										// QUEST //
+Q10:
+if (countitem(5206)<1 || countitem(979) < 1 ) goto NOIT10;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET10, "Nein", CL;
+										// QUEST //
+Q11:
+if (countitem(5206)<1 || countitem(981) < 1 ) goto NOIT11;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET11, "Nein", CL;
+Q12:
+if (countitem(5096)<1 || countitem(983) < 1 ) goto NOIT12;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET12, "Nein", CL;
+										// QUEST //
+Q13:
+if (countitem(5096)<1 || countitem(978) < 1 ) goto NOIT13;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET13, "Nein", CL;
+										// QUEST //
+Q14:
+if (countitem(5096)<1 || countitem(978) < 1 ) goto NOIT14;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET14, "Nein", CL;
+
+Q15:
+if (countitem(5096)<1 || countitem(976) < 1 ) goto NOIT15;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET15, "Nein", CL;
+Q16:
+if (countitem(5096)<1 || countitem(979) < 1 ) goto NOIT16;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET16, "Nein", CL;
+										// QUEST //
+Q17:
+if (countitem(5096)<1 || countitem(981) < 1 ) goto NOIT17;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET17, "Nein", CL;
+										// QUEST //
+Q18:
+if (countitem(5096)<1 || countitem(975) < 1 ) goto NOIT18;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET18, "Nein", CL;
+										// QUEST //
+Q19:
+if (countitem(5096)<1 || countitem(982) < 1 ) goto NOIT19;
+		next;
+	mes @n$;
+	mes "Wunderbar, du hast alle Items gefunden !";
+		next;
+	mes @n$;
+	mes "Möchtest du die Items nun abgeben?";
+	menu "Ja !", GET19, "Nein", CL;
+
+
+
+
+GET1:
+		next;	
+	getitem 22490, 1;								// ITEMAUSGABE //
+	delitem 7216, 255;
+	delitem 983, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET2:
+		next;	
+	getitem 22491, 1;								// ITEMAUSGABE //
+	delitem 7216, 255;
+	delitem 978, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET3:
+		next;	
+	getitem 22492, 1;									// ITEMAUSGABE //
+	delitem 7216, 255;
+	delitem 978, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET4:
+		next;		
+	getitem 22493, 1;								// ITEMAUSGABE //
+	delitem 7216, 255;
+	delitem 976, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET5:
+		next;	
+	getitem 22494, 1;									// ITEMAUSGABE //
+	delitem 7216, 255;
+	delitem 979, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET6:
+		next;	
+	getitem 22495, 1;									// ITEMAUSGABE //
+	delitem 7216, 255;
+	delitem 981, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET7:
+		next;	
+	getitem 22496, 1;								// ITEMAUSGABE //
+	delitem 7216, 255;
+	delitem 982, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+
+GET8:
+		next;	
+	getitem 22486, 1;								// ITEMAUSGABE //
+	delitem 5206, 1;
+	delitem 983, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET9:
+		next;	
+	getitem 22487, 1;								// ITEMAUSGABE //
+	delitem 5206, 1;
+	delitem 978, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET10:
+		next;	
+	getitem 22488, 1;									// ITEMAUSGABE //
+	delitem 5206, 1;
+	delitem 979, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET11:
+		next;		
+	getitem 22489, 1;								// ITEMAUSGABE //
+	delitem 5206, 1;
+	delitem 981, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET12:
+		next;	
+	getitem 22483, 1;									// ITEMAUSGABE //
+	delitem 5096, 1;
+	delitem 983, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET13:
+		next;	
+	getitem 22479, 1;								// ITEMAUSGABE //
+	delitem 5096, 1;
+	delitem 978, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET14:
+		next;	
+	getitem 22480, 1;							// ITEMAUSGABE //
+	delitem 5096, 1;
+	delitem 978, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+
+GET15:
+		next;	
+	getitem 22481, 1;									// ITEMAUSGABE //
+	delitem 5096, 1;
+	delitem 976, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET16:
+		next;		
+	getitem 22478, 1;								// ITEMAUSGABE //
+	delitem 5096, 1;
+	delitem 979, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET17:
+		next;	
+	getitem 22482, 1;								// ITEMAUSGABE //
+	delitem 5096, 1;
+	delitem 981, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+GET18:
+		next;	
+	getitem 22484, 1;									// ITEMAUSGABE //
+	delitem 5096, 1;
+	delitem 975, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+
+GET19:
+		next;	
+	getitem 22485, 1;									// ITEMAUSGABE //
+	delitem 5096, 1;
+	delitem 982, 1;
+	mes @n$;
+	mes "Viel Spaß damit!";
+	cutin "", 255;
+		close;
+
+
+
+
+
+
+										// NO ITEMS //
+NOIT1:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "255x Red Muffler";
+	mes "1x Black Dyestuffs";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOIT2:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "255x Red Muffler";
+	mes "1x Cobaltblue Dyestuffs";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOIT3:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "255x Red Muffler";
+	mes "1x Cobaltblue Dyestuffs";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOIT4:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "255x Red Muffler";
+	mes "1x Lemon Dyestuffs";
+	cutin "", 255;
+		close;
+NOIT5:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "255x Red Muffler";
+	mes "1x Darkgreen Dyestuffs";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOIT6:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "255x Red Muffler";
+	mes "1x Violet Dyestuffs";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOIT7:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "255x Red Muffler";
+	mes "1x White Dyestuffs";
+	cutin "", 255;
+		close;
+
+										// NO ITEMS //
+NOIT8:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Romantic White Flower";
+	mes "1x Black Dyestuffs";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOIT9:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Romantic White Flower";
+	mes "1x Cobaltblue Dyestuffs";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOIT10:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Romantic White Flower";
+	mes "1x Green Dyestuffs";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOIT11:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Romantic White Flower";
+	mes "1x Violet Dyestuffs";
+	cutin "", 255;
+		close;
+
+NOIT12:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Assassin Mask";
+	mes "1x Black Dyestuffs";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOIT13:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Assassin Mask";
+	mes "1x Cobaltblue Dyestuffs";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOIT14:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Assassin Mask";
+	mes "1x Cobaltblue Dyestuffs";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOIT15:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Assassin Mask";
+	mes "1x Lemon Dyestuffs";
+	cutin "", 255;
+		close;
+NOIT16:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Assassin Mask";
+	mes "1x Darkgreen Dyestuffs";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOIT17:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Assassin Mask";
+	mes "1x Violet Dyestuffs";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOIT18:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Assassin Mask";
+	mes "1x Scarlet Dyestuffs";
+	cutin "", 255;
+		close;
+										// NO ITEMS //
+NOIT19:
+		next;
+	mes @n$;
+	mes "Dafür benötige ich:";
+	mes "1x Assassin Mask";
+	mes "1x White Dyestuffs";
+	cutin "", 255;
+		close;
+
+										// CLOSE //
+CL:
+		cutin "", 255;
+		close;
+}

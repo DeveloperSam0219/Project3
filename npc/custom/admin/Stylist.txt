@@ -1,0 +1,161 @@
+// +-------------------------------------------+
+// | Advanced Stylist								 |
+// +-------------------------------------------+
+// | By: Hudelf									 |
+// +-------------------------------------------+
+// | Current Version: 2.1						 |
+// +-------------------------------------------+
+// | Description:									 |
+// |	This is the traditional stylist with	 |
+// |	several new features. You can now scroll|
+// |	backwards or forwards, and save up to	 |
+// |	three palettes while logged in			 |
+// +-------------------------------------------+
+// | Changelog:									 |
+// |	02/08/07 - 1.0 - Script finished		 |
+// |	06/04/07 - 2.0 - Rewrote entire script	 |
+// |						Added new features	 |
+// |	11/07/07 - 2.1 - Changed var types		 |
+// | 					  Fixed minor text issues |
+// +-------------------------------------------+
+
+invek,161,156,4	script	Stylist	122,{
+
+	set .@name$,"[^FF8000Stylist^000000]";
+	setarray .@max[1],553,37,55;		// Number of cloths, haircolors, hairstyles in client
+	setarray .@blacklist[0],188,143,261;	// NPC will skip any cloth colors in this array.
+										//  	Use for palettes that cause errors or just plain look bad.
+										//		Leave first value at 0 to disable.
+	setarray .@type[1],7,6,1;			// DO NOT EDIT
+	set .@style,0;
+
+	cutin "job_alche_vincent",2;	
+	mes .@name$;
+	mes "Ich kann dein Aussehen nach deinem Wunsch ändern.";
+	mes " ";
+	mes "Wähle aus was du ändern möchtest:";
+	next;
+	set .@s,select("Kleiderfarbe",
+				"Haarfarbe",
+				"Haarstyle");
+	
+	mes .@name$;
+	mes "Wähle aus:";
+	next;
+	menu "Starte am Anfang",L_start,
+		"Startnummer Auswählen",-;
+	
+	// CHOOSE WHERE TO START =====================================================
+	mes .@name$;
+	mes "Wähle ein Style zwischen ^0000FF0 und " +.@max[.@s]+ "^000000.";
+	next;
+	input .@style;
+	
+	if (.@style < 0 || .@style > .@max[.@s]) {
+		mes .@name$;
+		mes "Dieser Style ist über dem Stylebereich";
+		cutin "", 255;
+		close;
+	}
+
+  L_start:
+	setarray @revert[1],getlook(.@type[.@s]),0,0;
+	mes .@name$;
+	mes "Anfang ist ab Nummer ^007700" +.@style+ "^000000.";
+	next;
+	
+  // BEGINNING OF STYLE MENU LOOP ================================================
+  L_menuloop:
+	if (.@blacklist[0]) {
+		for (set .@f,0; .@f < getarraysize(.@blacklist); set .@f,.@f+1) {
+			if (.@style == .@blacklist[.@f] && .@previous == 1 && .@s == 1) {
+				message strcharinfo(0),"GM Message - Cloth " +.@style+ " was removed.";
+				set .@style, .@style - 1;
+				goto L_menuloop;
+			} else if (.@style == .@blacklist[.@f] && .@s == 1) {
+				message strcharinfo(0),"GM Message - Cloth " +.@style+ " was removed.";
+				set .@style, .@style +1;
+				goto L_menuloop;
+			}
+		}
+	}
+	setlook .@type[.@s],.@style;
+	mes "Das ist Style nummer ^007700" +.@style+ "^000000.";
+	
+	set .@next, .@style + 1;
+	set .@prev, .@style - 1;
+	
+	// MAXIMUM MENU
+	if (.@style == .@max[.@s]) {
+		set .@next,0;
+		message strcharinfo(0),"Limit erreicht";
+	}
+	
+	// MINIMUM MENU ==============================================================
+	if (.@style == 0) {
+		set .@prev,.@max[.@s];
+		message strcharinfo(0),"Anfang erreicht";
+	}
+	
+	// PREVIOUS MENU =============================================================
+	if (.@previous) {
+		menu "^FF0000Vorheriges - " +.@prev+ "^000000",L_prev,
+			"^0000FFNächstes - " +.@next+ "^000000",L_next,
+			"Springe zu",L_jump,
+			"Speichern",L_save,
+			"Laden",L_load;
+	}
+	
+	// DEFAULT MENU ==============================================================
+	menu "^0000FFNächstes - " +.@next+ "^000000",L_next,
+		"^FF0000Vorheriges - " +.@prev+ "^000000",L_prev,
+		"Springe zu",L_jump,
+		"Speichern",L_save,
+		"Laden",L_load;
+		
+  L_next:
+	set .@previous,0;
+	set .@style, .@next;
+	goto L_menuloop;
+
+  L_prev:
+	set .@previous,1;
+	set .@style, .@prev;
+	goto L_menuloop;
+	
+  L_jump:
+	next;
+	mes .@name$;
+	mes "Wähle aus zu welchem Style du springen möchtest:";
+	next;
+	input .@style;
+	if (.@style < 0 || .@style > .@max[.@s]) {
+		mes .@name$;
+		mes "Diese Style Nummer existiert nicht.";
+		cutin "", 255;
+		close;
+	}
+	goto L_menuloop;
+	
+  L_save:
+	next;
+	mes .@name$;
+	mes "Wähle ein Slot aus in dem du es speichern möchtest:";
+	set .@x, select("Slot 1 - [" +@revert[1]+ "]",
+					"Slot 2 - [" +@revert[2]+ "]",
+					"Slot 3 - [" +@revert[3]+ "]");
+					
+	setarray @revert[.@x], .@style;
+	goto L_menuloop;
+	
+  L_load:
+	next;
+	mes .@name$;
+	mes "Wähle aus welchen Slot du es laden möchtest:";
+	set .@x, select("Slot 1 - [" +@revert[1]+ "]",
+					"Slot 2 - [" +@revert[2]+ "]",
+					"Slot 3 - [" +@revert[3]+ "]");
+					
+	set .@style, @revert[.@x];
+	goto L_menuloop;
+}

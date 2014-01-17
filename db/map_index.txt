@@ -1003,3 +1003,68 @@ c_tower3_
 //
 //mymap	1250
 //mymap-2
+// ----- Mall -----
+dro_mall
+// --- PVP Room ---
+dro_pvp
+// --- Additional Maps ---
+aev_fild01
+Flaris
+Jazeera
+mercado
+courtyard
+volterra
+
+// - Region Arenas -
+region_1
+region_2
+region_3
+region_4
+region_5
+region_6
+region_7
+region_8
+region_9
+region_10
+region_11
+region_12
+region_13
+invek
+dbarena1
+dbarena2
+dbarena3
+dbarena4
+dbarena5
+gm_haus
+Goldraum
+bank
+lhz_dun02_5
+n_pvp
+norm_pvp
+poring_cat
+power_plant
+artz_pvp
+prtv_in01
+prtv_in02
+vender
+prtv_kirche
+
+//======================================================================================
+// - Other/Extra maps -
+//======================================================================================
+rwc01	1000
+rwc02
+rwc03
+2009rwc_01
+2009rwc_02
+2009rwc_03
+2009rwc_04
+2009rwc_f01
+2008rwc_01
+2008rwc_02
+2008rwc_03
+2008rwc_04
+2008rwc_05
+2008rwc_06
+2008rwc_07
+2008rwc_08
